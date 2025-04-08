@@ -11,16 +11,16 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://boa-z.github.io',
+  url: 'https://livecontainer.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployments, it is often '/<projectName>/'
-  baseUrl: '/LiveContainer-Docs/',
+  baseUrl: '/',
   trailingSlash: false,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'khanhduytran0', // Usually your GitHub org/user name.
-  projectName: 'LiveContainer', // Usually your repo name.
+  organizationName: 'livecontainer', // Usually your GitHub org/user name.
+  projectName: 'livecontainer.github.io', // Usually your repo name.
 
   // onBrokenLinks: 'throw',
   onBrokenLinks: 'warn',
