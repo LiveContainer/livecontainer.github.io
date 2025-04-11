@@ -3,7 +3,7 @@ title: JIT-Less Diagnose Page
 sidebar_position: 9
 ---
 
-# 6. About JIT-Less Diagnose Page
+# About JIT-Less Diagnose Page
 
 <img width="300" alt="Image" src="https://github.com/user-attachments/assets/03f6392d-1a2a-4e8b-b03a-e6e7568346d2" />
 
@@ -13,7 +13,7 @@ This page exists in LiveContainer 3.1.51+
 
 If you successfully setup JIT-Less mode, your JIT-Less Mode Diagnose should look like the screenshot above. The most important indicator is "Certificate Last Up Date". This field should change if you reopens your store. If not, follow the following instructions to diagnose your setup.
 
-## 6.1. App Group ID, App Group Accessible, Store
+## App Group ID, App Group Accessible, Store
 
 The "App Group ID" field should end with the exact same 10 characters as the "Bundle Identifier". "App Group Accessible" should be "Yes" and "Store" should correctly show your store.
 
@@ -64,7 +64,7 @@ This item should exist and its content should look like `group.com.rileytestut.A
 
 It is reported that if LiveContainer's entitlement is incorrect, you can't activate/deactivate apps in SideStore. **Please do not submit issues about incorrect entitlement as it is not a LiveContainer issue.**
 
-## 6.2.Patch Detected
+## Patch Detected
 
 :::note
 Make sure App Group ID, App Group Accessible and Store are correct before proceeding.
@@ -73,7 +73,7 @@ Make sure App Group ID, App Group Accessible and Store are correct before procee
 It should say "Yes". If not, close your store from the app switcher, reopen it and refresh this diagnose page.
 If still not, patch your store again.
 
-## 6.3. Certificate Data / Password Found, Certificate Last Up Date
+## Certificate Data / Password Found, Certificate Last Up Date
 
 :::note
 Make sure 1 & 2 are correct before proceeding.

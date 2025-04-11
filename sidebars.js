@@ -11,18 +11,15 @@ const sidebars = {
       label: 'Introduction',
     },
     {
-      type: 'category',
-      label: 'Getting Started',
-      items: [
-        'basics/installation',
-        'basics/quick-start',
-      ],
+      type: 'doc',
+      id: 'installation',
+      label: 'Installation',
     },
     {
       type: 'category',
       label: 'Guides',
       items: [
-        'guides/multiple-containers',
+        'guides/multiple-livecontainers',
         'guides/app-settings',
         'guides/jit-support',
         'guides/tweaks',

@@ -15,4 +15,4 @@ Run iOS app without actually installing it!
 
 ## Getting Started
 
-To get started with LiveContainer, check out the [Installation Guide](./basics/installation).
+To get started with LiveContainer, check out the [Installation Guide](installation.md).

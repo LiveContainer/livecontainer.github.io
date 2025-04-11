@@ -28,7 +28,7 @@ Strict Hiding Mode
 
 ### Signer
 
-It is recommended to use `ZSign` as the default signer.
+This option has been removed in version 3.3.55, now `ZSign` is the default signer.
 
 ### Language
 
@@ -72,7 +72,9 @@ Fix file picker not responding when hitting 'open' by forcing this app to copy s
 
 ### Bypass AssertBarrierOnQueue
 
-Might prevent some games from crashing, but may cause them to be unstable.
+~~Might prevent some games from crashing, but may cause them to be unstable.~~
+
+This option has been removed in version 3.3.55.
 
 ### Force Sign
 
