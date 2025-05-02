@@ -14,7 +14,7 @@ const config = {
   url: 'https://celloserenity.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployments, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/livecontainersite',
   trailingSlash: false,
 
   // GitHub pages deployment config.
