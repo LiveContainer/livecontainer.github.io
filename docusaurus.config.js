@@ -19,8 +19,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'LiveContainer', // Usually your GitHub org/user name.
-  projectName: 'LiveContainer', // Usually your repo name.
+  organizationName: 'livecontainer', // Usually your GitHub org/user name.
+  projectName: 'livecontainer.github.io', // Usually your repo name.
 
   // onBrokenLinks: 'throw',
   onBrokenLinks: 'warn',
@@ -55,7 +55,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/LiveContainter/LiveContainer/tree/main',
+            'https://github.com/LiveContainer/livecontainer.github.io/tree/main',
         },
         blog: false,
         theme: {
