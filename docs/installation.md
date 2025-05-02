@@ -11,17 +11,17 @@ sidebar_position: 1
 - SideStore 0.6.0+ / AltStore 2.0+
 
 ## Download
-- Download methods: [AltStore Source](https://tinyurl.com/LCAltStoreClassic), [SideStore Source](https://tinyurl.com/LCSideStore), the latest IPA [here](https://github.com/LiveContainer/LiveContainer/releases/latest), or the latest nightly IPA [here](https://github.com/LiveContainer/LiveContainer/releases/tag/nightly)
+- Download methods: [Add to AltStore](https://tinyurl.com/LCAltStoreClassic), [Add to SideStore](https://tinyurl.com/LCSideStore), the latest IPA [here](https://github.com/LiveContainer/LiveContainer/releases/latest), or the latest nightly IPA [here](https://github.com/LiveContainer/LiveContainer/releases/tag/nightly)
 - It is recommended to setup JIT-Less mode, in which LiveContainer signs your apps with certificate from SideStore/AltStore, see the instructions below.
 
 ## Installation
-### JIT-Less mode (without JIT [recommended])
+### JIT-Less mode (without JIT \[recommended])
 Without JIT, guest apps need to be codesigned, which requires retrieving the certificate and password from SideStore or AltStore. 
 >[!Note] 
 JIT-Less mode does not mean you can't enable JIT for your apps. Instead, it means JIT is not required to launch an app. If you want to use JIT, see the instructions below in "JIT Support" section. 
 If something goes wrong, please check "JIT-Less Mode Diagnose" for more information.
 
-#### Method 1 (Requires SideStore 0.6.2-nightly+ (recommended))
+#### Method 1 (Requires SideStore 0.6.2-nightly+ \[recommended])
 - Open Settings in LiveContainer 
 - Tap "Import Certificate from SideStore"
 - SideStore will be opened and ask if you want to export the certificate. If you don't see the prompt, keep SideStore open in the background and tap "Import Certificate from SideStore" again.
@@ -38,6 +38,6 @@ If something goes wrong, please check "JIT-Less Mode Diagnose" for more informat
 
 Note: If you update or reinstall SideStore/AltStore, you'll need to reapply the patch. Re-patch is not needed when you refresh your store.
 
-### With JIT (Requires SideStore 0.6.2-nightly+ (recommended), other JIT enabler)
+### With JIT (Requires SideStore 0.6.2-nightly+, other JIT enabler)
 - In settings, select your preferred JIT enabler.
 - Tap the play icon. (If SideStore, it will jump to SideStore. In SideStore, hold down LiveContainer and tap `Enable JIT`. It will jump back to LiveContainer with JIT enabled and the guest app is now ready to use.)
