@@ -19,8 +19,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'livecontainer', // Usually your GitHub org/user name.
-  projectName: 'livecontainer.github.io', // Usually your repo name.
+  organizationName: 'CelloSerenity', // Usually your GitHub org/user name.
+  projectName: 'livecontainersite', // Usually your repo name.
 
   // onBrokenLinks: 'throw',
   onBrokenLinks: 'warn',
