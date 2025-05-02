@@ -38,6 +38,6 @@ If something goes wrong, please check "JIT-Less Mode Diagnose" for more informat
 
 Note: If you update or reinstall SideStore/AltStore, you'll need to reapply the patch. Re-patch is not needed when you refresh your store.
 
-### With JIT (Requires SideStore 0.6.2-nightly+, other JIT enabler)
-- In settings, select your preferred JIT enabler.
+### With JIT (Requires Debugger \[SideStore 0.6.2-nightly+/StikJIT/StikDebug/etc.])
+- In settings, select your preferred JIT enabler/debugger.
 - Tap the play icon. (If SideStore, it will jump to SideStore. In SideStore, hold down LiveContainer and tap `Enable JIT`. It will jump back to LiveContainer with JIT enabled and the guest app is now ready to use.)
