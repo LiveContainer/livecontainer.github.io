@@ -11,16 +11,16 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://celloserenity.github.io',
+  url: 'https://livecontainer.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployments, it is often '/<projectName>/'
-  baseUrl: '/livecontainersite',
+  baseUrl: '/',
   trailingSlash: false,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'CelloSerenity', // Usually your GitHub org/user name.
-  projectName: 'livecontainersite', // Usually your repo name.
+  organizationName: 'LiveContainer', // Usually your GitHub org/user name.
+  projectName: 'LiveContainer', // Usually your repo name.
 
   // onBrokenLinks: 'throw',
   onBrokenLinks: 'warn',
@@ -55,7 +55,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/CelloSerenity/livecontainersite/tree/main',
+            'https://github.com/LiveContainter/LiveContainer/tree/main',
         },
         blog: false,
         theme: {
