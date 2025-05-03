@@ -24,6 +24,8 @@ const sidebars = {
         'guides/jit-support',
         'guides/tweaks',
         'guides/jit-less-diagnose-page',
+        'guides/add-to-home-screen',
+        'guides/lock-app',
       ],
     },
     {

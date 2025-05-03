@@ -16,5 +16,3 @@ To use multiple LiveContainers:
 3. To use second container (gray icon):
    - Convert app to "Shared App" in first container
    - Launch app from second container
-
-## 

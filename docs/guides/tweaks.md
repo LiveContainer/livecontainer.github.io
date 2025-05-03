@@ -7,6 +7,12 @@ sidebar_position: 3
 
 LiveContainer provides a way to inject tweaks without injecting it to the app beforehand. Direct injection is still recommended as not all tweaks work correctly with LiveContainer's TweakLoader.
 
+LiveContainer comes with its own TweakLoader, which automatically load CydiaSubstrate and tweaks. TweakLoader is injected to every app you install. You can override TweakLoader.dylib symlink with your own implementation if you wish.
+
+`.dylib` files in Tweaks folder are global, they are loaded to all apps. You can create app-specific tweaks folder and switch between them instantly.
+
+To install tweaks, you can use the built-in tweak manager in LiveContainer, which will automatically sign tweaks as you import. Otherwise, you can manually add them and then use the tweak manager to sign them.
+
 ## Adding Tweaks
 
 :::note
@@ -21,13 +27,13 @@ Managing tweaks is only available in the primary LiveContainer (Blue) and for pr
 4. For app-specific tweak, long press your app -> settings -> tap tweak folder -> select the folder you created
 
 ## Removing Tweaks
+
 Go to tweaks tab -> find your tweak/folder -> slide left -> delete
 
 ## Renaming Tweaks
+
 Go to tweaks tab -> find your tweak/folder -> long press -> rename
 
 ## About Tweak Signing
-Tweak Signing is handled automatically by LiveContainer. Tweaks will be re-sign when it is changed or when its signature is expired. You can still manually re-sign by pressing the sign button near the plus button.
 
-advanced
-guides
+Tweak Signing is handled automatically by LiveContainer. Tweaks will be re-sign when it is changed or when its signature is expired. You can still manually re-sign by pressing the sign button near the plus button.

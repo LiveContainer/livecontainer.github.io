@@ -27,7 +27,7 @@ If it only say `group.com.SideStore.SideStore` or `Unknown`, then there's someth
 - Account used to install SideStore and LiveContainer matches. This can be checked by going to iOS settings -> General -> VPN & Device Management -> (your account name). Check if both LiveContainer and SideStore are under the same account.
 
 :::note
-> "Entitlement File" exists in 3.2.51+
+"Entitlement File" exists in 3.2.51+
 :::
 
 If you meet the above 4 criteria but App Group is still not accessible, tap "Entitlement File" and check the entitlement extracted form LiveContainer's main executable. A correct entitlement may look like this:
