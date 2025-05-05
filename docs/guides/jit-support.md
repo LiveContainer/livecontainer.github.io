@@ -18,9 +18,10 @@ The correct way to enable JIT for an app inside LiveContainer:
 5. Tap run
 6. If your JIT enabler supports automatic enabling, you are done! Otherwise, you need to enable JIT for LiveContainer from your JIT enabler manually while the "waiting for JIT" prompt remains open in the background.
 
-## StikJIT (Recommended)
+## StikJIT or StikDebug (Recommended)
 
-[StikJIT](https://github.com/StephenDev0/StikJIT)
+[StikJIT](https://github.com/StephenDev0/StikJIT), [StikDebug](https://apps.apple.com/us/app/stikdebug/id6744045754)
+FYI- All the steps to using StikJIT and StikDebug are the same, so for clarity's sake, "StikJIT" in this article will relate to both StikJIT and StikDebug.
 
 If using StikJIT (Recommended), you have 2 choices. If you prefer to install StikJIT as a separate app, choose "StikJIT (StandAlone)". If you have 2 LiveContainers installed, you can install StikJIT inside LiveContainer and convert it to a shared app. In this case, select "StikJIT (Another LiveContainer)"
 
