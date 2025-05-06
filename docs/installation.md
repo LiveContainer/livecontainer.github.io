@@ -19,7 +19,7 @@ sidebar_position: 1
 
 ### JIT-Less mode (without JIT \[recommended])
 
-Without JIT, guest apps need to be codesigned, which requires retrieving the certificate and password from SideStore or AltStore. 
+These steps can be bypassed if you don't mind enabling JIT for your app every time, but it is not recommended. Without JIT, guest apps need to be codesigned, which requires retrieving the certificate and password from SideStore or AltStore. 
 
 :::note
 JIT-Less mode does not mean you can't enable JIT for your apps. Instead, it means JIT is not required to launch an app. If you want to use JIT, see the instructions below in "JIT Support" section.
