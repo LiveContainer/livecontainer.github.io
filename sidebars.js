@@ -20,6 +20,7 @@ const sidebars = {
       label: 'Guides',
       items: [
         'guides/multiple-livecontainers',
+        'guides/multitask',
         'guides/app-settings',
         'guides/jit-support',
         'guides/tweaks',
