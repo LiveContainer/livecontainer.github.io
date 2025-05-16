@@ -12,8 +12,14 @@ sidebar_position: 1
 
 ## Download
 
-- Download methods: [Add to AltStore](https://tinyurl.com/LCAltStoreClassic), [Add to SideStore](https://tinyurl.com/LCSideStore), the latest IPA [here](https://github.com/LiveContainer/LiveContainer/releases/latest), or the latest nightly IPA [here](https://github.com/LiveContainer/LiveContainer/releases/tag/nightly)
-- It is recommended to setup JIT-Less mode, in which LiveContainer signs your apps with certificate from SideStore/AltStore, see the instructions below.
+- Download methods:
+- Stable:
+
+  [AltSource (raw)](https://raw.githubusercontent.com/LiveContainer/LiveContainer/refs/heads/main/apps.json) ([Add to AltStore](https://tinyurl.com/LCAltStoreClassic), [Add to SideStore](https://tinyurl.com/LCSideStore)), [IPA download](https://github.com/LiveContainer/LiveContainer/releases/latest)
+- Nightly:
+
+  [AltSource (raw)](https://raw.githubusercontent.com/LiveContainer/LiveContainer/refs/heads/hbdev/apps_nightly.json) ([Add to AltStore](https://tinyurl.com/LCAltStoreClassic-N), [Add to SideStore](https://tinyurl.com/LCSideStore-N)), [IPA download](https://github.com/LiveContainer/LiveContainer/releases/tag/nightly)
+- It is recommended to setup JIT-Less mode, in which LiveContainer signs your apps with your certificate from AltStore/SideStore (see the instructions below).
 
 ## Installation
 
@@ -33,6 +39,10 @@ If something goes wrong, please check "JIT-Less Mode Diagnose" for more informat
 - Press "Export"
 - Tap "JIT-Less Mode Diagnose" and tap "Test JIT-Less Mode"
 - If it says "JIT-Less Mode Test Passed", you are good to go!
+
+:::note
+If you reinstall SideStore/AltStore using AltServer, you will need to go through these steps again or risk needing to reinstall the app.
+:::
 
 #### Method 2 (Requires SideStore/AltStore)
 - Open Settings in LiveContainer, tap "Patch SideStore/AltStore", and the app will switch to SideStore/AltStore to reinstall it with the tweak applied. If you use AltWidget, select "Keep Extension."
