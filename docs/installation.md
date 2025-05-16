@@ -52,3 +52,8 @@ If you reinstall SideStore/AltStore using AltServer, you will need to go through
 - Tap the run icon, it will attempt to restart LiveContainer with guest app loaded.
 
 Note: If you update or reinstall SideStore/AltStore, you'll need to reapply the patch. Re-patch is not needed when you refresh your store.
+
+### Installing Apps
+- Open LiveContainer, tap the plus icon in the upper right hand corner and select IPA files to install.
+- Choose the app you want to open in the next launch.
+- You can long-press the app to manage it.
