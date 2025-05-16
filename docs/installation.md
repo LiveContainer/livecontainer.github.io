@@ -44,7 +44,7 @@ If something goes wrong, please check "JIT-Less Mode Diagnose" for more informat
 If you reinstall SideStore/AltStore using AltServer, you will need to go through these steps again or risk needing to reinstall the app.
 :::
 
-#### Method 2 (Requires SideStore/AltStore)
+#### Method 2 (Requires AltStore/SideStore)
 - Open Settings in LiveContainer, tap "Patch SideStore/AltStore", and the app will switch to SideStore/AltStore to reinstall it with the tweak applied. If you use AltWidget, select "Keep Extension."
 - Wait for the installation to finish, then **reopen SideStore/AltStore**.
 - Return to LiveContainer and press "Test JIT-Less Mode." If it says "Test Passed," JIT-less mode is ready.
