@@ -22,8 +22,8 @@ sidebar_position: 1
 ### Nightly:
 
 - [AltSource (raw)](https://github.com/LiveContainer/LiveContainer/releases/download/nightly/apps_nightly.json)
-- ([Add to AltStore Classic](https://tinyurl.com/LC-NAltStoreClassic) (Requires AltStore Classic to be installed or link will not work)
-- [Add to SideStore](https://tinyurl.com/LC-NSideStore)) (Requires SideStore to be installed or link will not work)
+- [Add to AltStore Classic](https://tinyurl.com/LC-NAltStoreClassic) (Requires AltStore Classic to be installed or link will not work)
+- [Add to SideStore](https://tinyurl.com/LC-NSideStore) (Requires SideStore to be installed or link will not work)
 - [IPA download](https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa)
 
 - It is recommended to setup JIT-Less mode, in which LiveContainer signs your apps with your certificate from AltStore/SideStore (see the instructions below).
