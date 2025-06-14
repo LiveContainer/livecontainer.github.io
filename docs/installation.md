@@ -12,12 +12,19 @@ sidebar_position: 1
 
 ## Download Methods
 
-- Stable:
+### Stable:
 
-  [AltSource (raw)](https://raw.githubusercontent.com/LiveContainer/LiveContainer/refs/heads/main/apps.json) ([Add to AltStore](https://tinyurl.com/LCAltStoreClassic), [Add to SideStore](https://tinyurl.com/LCSideStore)), [IPA download](https://github.com/LiveContainer/LiveContainer/releases/latest)
-- Nightly:
+- [AltSource (raw)](https://raw.githubusercontent.com/LiveContainer/LiveContainer/refs/heads/main/apps.json)
+- [Add to AltStore Classic](https://tinyurl.com/LCAltStoreClassic) (Requires AltStore Classic to be installed or link will not work)
+- [Add to SideStore](https://tinyurl.com/LCSideStore) (Requires SideStore to be installed or link will not work)
+- [IPA download](https://github.com/LiveContainer/LiveContainer/releases/latest/download/LiveContainer.ipa)
+  
+### Nightly:
 
-  [AltSource (raw)](https://raw.githubusercontent.com/LiveContainer/LiveContainer/refs/heads/hbdev/apps_nightly.json) ([Add to AltStore](https://tinyurl.com/LCAltStoreClassic-N), [Add to SideStore](https://tinyurl.com/LCSideStore-N)), [IPA download](https://github.com/LiveContainer/LiveContainer/releases/tag/nightly)
+- [AltSource (raw)](https://github.com/LiveContainer/LiveContainer/releases/download/nightly/apps_nightly.json)
+- ([Add to AltStore Classic](https://tinyurl.com/LC-NAltStoreClassic) (Requires AltStore Classic to be installed or link will not work)
+- [Add to SideStore](https://tinyurl.com/LC-NSideStore)) (Requires SideStore to be installed or link will not work)
+- [IPA download](https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa)
 
 - It is recommended to setup JIT-Less mode, in which LiveContainer signs your apps with your certificate from AltStore/SideStore (see the instructions below).
 
