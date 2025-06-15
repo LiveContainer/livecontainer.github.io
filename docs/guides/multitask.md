@@ -2,9 +2,7 @@
 
 LiveContainer now supports true multitasking on the latest iOS—no jailbreak or exploits required. Leveraging Duy Tran’s reverse engineering work on FrontBoardAppLauncher and utilizing multi-process app extensions, LiveContainer enables apps to run in separate processes and windows, effectively bypassing the system’s 3-app limit.
 
-:::note
-This is still technically a PoC, so not all apps will work yet, and it may be bound to stricter memory limit.
-:::
+You can now launch multiple apps simultaneously in in-app virtual windows. These windows can be resized, scaled, and even displayed using the native Picture-in-Picture (PiP) feature. On iPads, apps can run in native window mode, displaying each app in a separate system window. And if you wish, you can choose to run apps in multitasking mode by default in settings.
 
 ## How to use
 
@@ -15,9 +13,10 @@ Before you start, please note that this feature is still in beta and may not wor
 3. Drag the top bar to move the app window.
 4. Drag the resize handle at the right corner to adjust the app window size.
 
-## Limitations
-
-Memory limit: The memory limit for each app is 400MB.
+:::note
+1. To use multitasking, ensure you select "Keep Extension" when installing via SideStore/AltStore.
+2. If you want to enable JIT for multitasked apps, you’ll need a JIT enabler that supports attaching by PID.
+:::
 
 ## Known issues
 

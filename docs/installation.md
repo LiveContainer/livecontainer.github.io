@@ -40,10 +40,11 @@ If something goes wrong, please check "JIT-Less Mode Diagnose" for more informat
 :::
 
 #### Method 1 (Requires AltStore 2.2.1+ / SideStore 0.6.2-nightly+ \[recommended])
-- Open Settings in LiveContainer 
-- Tap "Import Certificate from SideStore"
-- SideStore will be opened and ask if you want to export the certificate. If you don't see the prompt, keep SideStore open in the background and tap "Import Certificate from SideStore" again.
-- Press "Export"
+
+- Open Settings in LiveContainer
+- Tap "Import Certificate from AltStore/SideStore"
+- AltStore/SideStore will be opened and ask if you want to export the certificate. If you don't see the prompt, keep AltStore/SideStore open in the background and tap "Import Certificate from AltStore/SideStore" again.
+- Press "Export" in SideStore or set a password and export in AltStore
 - Tap "JIT-Less Mode Diagnose" and tap "Test JIT-Less Mode"
 - If it says "JIT-Less Mode Test Passed", you are good to go!
 
@@ -51,7 +52,8 @@ If something goes wrong, please check "JIT-Less Mode Diagnose" for more informat
 If you reinstall AltStore/SideStore using AltServer, you will need to go through these steps again or risk needing to reinstall the app.
 :::
 
-#### Method 2 (Requires AltStore/SideStore)
+#### Method 2 (Deprecated, Requires AltStore/SideStore)
+
 - Open Settings in LiveContainer, tap "Patch AltStore/SideStore", and the app will switch to SideStore/AltStore to reinstall it with the tweak applied. If you use AltWidget, select "Keep Extension."
 - Wait for the installation to finish, then **reopen AltStore/SideStore**.
 - Return to LiveContainer and press "Test JIT-Less Mode." If it says "Test Passed," JIT-less mode is ready.

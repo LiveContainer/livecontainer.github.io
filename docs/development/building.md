@@ -3,10 +3,6 @@ title: Building from Source
 sidebar_position: 1
 ---
 
-# Building LiveContainer from Source
+# Building
 
-```shell
-export THEOS=/path/to/theos
-git submodule update --init --recursive
-make package
-```
+Open Xcode, edit `DEVELOPMENT_TEAM[config=Debug]` in `xcconfigs/Global.xcconfig` to your team id and compile.

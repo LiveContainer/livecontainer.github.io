@@ -15,15 +15,15 @@ sidebar_position: 2
 
 ### LiveContainerSwiftUI
 
-- SwiftUI rewrite of LiveContainerUI (by @hugeBlack)
-- Lanaguage file `Localizable.xcstrings` is in here for multilingual support
+- SwiftUI rewrite of LiveContainerUI (by [@hugeBlack](https://github.com/hugeBlack))
+- Lanaguage file `Localizable.xcstrings` is in here for multilingual support. To help us translate LiveContainer, please visit [our crodwin project](https://crowdin.com/project/livecontainer)
 
 ### TweakLoader
 
 - A simple tweak injector, which loads CydiaSubstrate and load tweaks.
 - Injected to every app you install in LiveContainer.
 
-### AltStoreTweak
+### AltStoreTweak (Deprecated)
 
 - The tweak that got injected into SideStore/AltStore to retrieve certificate from it everytime it launches.
 
@@ -76,6 +76,6 @@ sidebar_position: 2
 - App Permissions are globally applied.
 - Guest app containers are not sandboxed. This means one guest app can access other guest apps' data.
 - App extensions aren't supported. they cannot be registered because: LiveContainer is sandboxed, SpringBoard doesn't know what apps are installed in LiveContainer, and they take up App ID.
-- Only one guest app can run at a time. This is much more like 3 apps limit where you have to disable an app to run another (switching between app in LiveContainer is instant).
+- Multitasking can be achieved by using multiple LiveContainer and the multitasking feature. However, physical keyboard may not work for apps in multitasking mode.
 - Remote push notification might not work. ~~If you have a paid developer account then you don't even have to use LiveContainer~~
 - Querying custom URL schemes might not work(?)
