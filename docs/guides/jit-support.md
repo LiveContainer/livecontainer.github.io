@@ -5,7 +5,7 @@ sidebar_position: 2
 
 # JIT Support
 
-LiveContainer has built-in support for popular JIT enablers. You can set it up in LiveContainer settings -> JIT section.
+LiveContainer has built-in support for popular JIT enablers for iOS 17.4-18.6. You can set it up in LiveContainer settings -> JIT section.
 Mark an app as JIT needed by going to: long press app -> settings -> enable "Launch with JIT." LiveContainer will wait for JIT to be enabled and, if avaliable, try to contact the JIT enabler you configured.
 
 The correct way to enable JIT for an app inside LiveContainer:
@@ -18,38 +18,21 @@ The correct way to enable JIT for an app inside LiveContainer:
 5. Tap run
 6. If your JIT enabler supports automatic enabling, you are done! Otherwise, you need to enable JIT for LiveContainer from your JIT enabler manually while the "waiting for JIT" prompt remains open in the background.
 
-## StikJIT or StikDebug (Recommended)
+## StikDebug (formerly StikJIT, recommended)
 
-[StikJIT](https://github.com/StephenDev0/StikJIT), [StikDebug](https://apps.apple.com/us/app/stikdebug/id6744045754)
-FYI- All the steps to using StikJIT and StikDebug are the same, so for clarity's sake, "StikJIT" in this article will relate to both StikJIT and StikDebug.
+[StikDebug](https://apps.apple.com/us/app/stikdebug/id6744045754)
 
-If using StikJIT (Recommended), you have 2 choices. If you prefer to install StikJIT as a separate app, choose "StikJIT (StandAlone)". If you have 2 LiveContainers installed, you can install StikJIT inside LiveContainer and convert it to a shared app. In this case, select "StikJIT (Another LiveContainer)"
-
-1. Install StikJIT and finish the setup.
+1. Install StikDebug and import your pairing file.
 2. Enter the settings of the app you want to run, enable "Launch with JIT"
-3. Go to LiveContainer settings->JIT Enabler->select "StikJIT" as the JIT method in LiveContainer settings.
-
-    - It's recommended to use "StikJIT (Another LiveContainer)" if the app needs JIT is installed through LiveContainer. LiveContainer will automatically start StikJIT when you launch the app.
-    - If you choose "StikJIT (Another LiveContainer)", you need to convert StikJIT to a shared app the first.
-
+3. Go to LiveContainer settings->JIT Enabler->select "StikDebug" as the JIT method in LiveContainer settings.
 4. Launch the app and enjoy!
 
-## SideStore (nightly)
+## SideStore (0.6.2)
 
-If using SideStore, choose SideStore as your JIT enabler. Please note that since SideStore's JIT URL Scheme is not implemented yet, you still need to manually enable JIT for current LiveContainer in SideStore. To do this, in the apps screen, ensure VPN and Wi-Fi or Airplane Mode is enabled, hold down on the app, and press "Enable JIT."
-
-## JitStreamer-EB (Relaunch)
-
-[JITStreamer-EB](https://jkcoxson.com/jitstreamer)
-
-If using JitStreamer-EB (largely Deprecated), choose JitStreamer-EB as your JIT enabler. If you use JitStreamer through a Wireguard VPN and you use the official server or you self-host and did not changed the WIREGUARD_SERVER_ADDRESS variable, you can leave "Address" blank. Otherwise, put the address to your server in "Address", including scheme (http/https) and port (9172).
-
-- Set it up first in JITStreamer-EB's website
-- Go to LiveContainer settings->JIT Enabler->Select JITStreamer-EB. You can leave the "Address" blank if you are using official server and it's default to http://[fd00::]:9172.
-- Long press the app that needs JIT->Settings->enable Launch with JIT->Tap Run, LiveContainer will contact the server and enable JIT for that app.
+To use SideStore, choose SideStore as your JIT enabler. Please note that since SideStore's JIT URL Scheme is not implemented yet, you still need to manually enable JIT for current LiveContainer in SideStore. To do this, in the My Apps screen, ensure that VPN is enabled and Wi-Fi is connected or Airplane Mode is enabled, then longpress the app and press "Enable JIT."
 
 ## SideJITServer
 
 [SideJITServer](https://github.com/nythepegasus/SideJITServer)
 
-If using SideJITServer, please input both your address and device UDID.
+To use SideJITServer, please input both your address and device UDID.

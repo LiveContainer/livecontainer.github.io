@@ -45,12 +45,10 @@ LiveContainer has built-in support for popular JIT enablers. You can set it up i
 Mark an app as JIT needed by going to: long press app -> settings -> enable Launch with JIT. LiveContainer will wait for JIT to be enabled and try to contact the JIT enabler you configured.
 
 :::note
-StikJIT is available in LiveContainer 3.3.51+
+StikDebug is available in LiveContainer 3.3.51+
 :::
 
-For *StikJIT* (Recommended), you have 2 choices. If you prefer to install StikJIT as a separate app, choose "StikJIT (StandAlone)". Or if you have 2 LiveContainers installed, you can install StikJIT inside LiveContainer and convert it to a shared app. In this case, select "StikJIT (Another LiveContainer)"
-
-For *JitStreamer-EB* (Deprecated), choose JitStreamer-EB as your JIT enabler. If you use JitStreamer through a Wireguard VPN and you use the official server or you self-host and did not changed the `WIREGUARD_SERVER_ADDRESS` variable, you can leave "Address" blank. Otherwise, put the address to your server in "Address", including scheme (http/https) and port (9172).
+For *StikDebug* (Recommended), install StikDebug as a separate app, and in LiveContainer settings, choose "StikDebug" under JIT enablers.
 
 For *SideJITServer/JITStreamer 2.0*, please input both your address and device UDID.
 
