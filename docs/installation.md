@@ -39,7 +39,7 @@ JIT-Less mode does not mean you can't enable JIT for your apps. Instead, it mean
 If something goes wrong, please check "JIT-Less Mode Diagnose" for more information.
 :::
 
-#### Method 1 (Requires AltStore 2.2.1+ / SideStore 0.6.2-nightly+ \[recommended])
+#### Method 1 (Requires AltStore 2.2.1+ / SideStore 0.6.2+ \[recommended])
 
 - Open Settings in LiveContainer
 - Tap "Import Certificate from AltStore/SideStore"
