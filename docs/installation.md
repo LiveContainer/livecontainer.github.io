@@ -73,9 +73,9 @@ If you reinstall AltStore/SideStore using AltServer, you will need to go through
 
 Once the basics work, explore the following guides:
 
-- [Multiple LiveContainers](./guides/multiple-livecontainers.md) — run additional containers and share apps between them.
-- [JIT Support](./guides/jit-support.md) — configure automatic JIT enablers or scripts.
-- [JIT-Less Diagnose Page](./guides/jit-less-diagnose-page.md) — verify imported certificates and troubleshoot signing issues.
-- [Tweaks](./guides/tweaks.md) — inject CydiaSubstrate tweaks globally or per app.
-- [Multitask](./guides/multitask.md) — float guest apps in resizable windows.
-- [Lock & Hide Apps](./guides/lock-app.md) — protect sensitive guests with Face ID or Strict Hiding mode.
+- [Multiple LiveContainers](/docs/guides/multiple-livecontainers) — run additional containers and share apps between them.
+- [JIT Support](/docs/guides/jit-support) — configure automatic JIT enablers or scripts.
+- [JIT-Less Diagnose Page](/docs/guides/jit-less-diagnose-page) — verify imported certificates and troubleshoot signing issues.
+- [Tweaks](/docs/guides/tweaks) — inject CydiaSubstrate tweaks globally or per app.
+- [Multitask](/docs/guides/multitask) — float guest apps in resizable windows.
+- [Lock & Hide Apps](/docs/guides/lock-app) — protect sensitive guests with Face ID or Strict Hiding mode.

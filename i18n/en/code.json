@@ -344,5 +344,53 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "home.logoAlt": {
+    "message": "LiveContainer Logo",
+    "description": "Alt text for the homepage logo"
+  },
+  "home.heroTitle": {
+    "message": "LiveContainer",
+    "description": "Homepage hero title"
+  },
+  "home.heroSubtitle": {
+    "message": "Run iOS apps in a sandbox without jailbreak",
+    "description": "Homepage hero subtitle"
+  },
+  "home.getStartedButton": {
+    "message": "Get Started",
+    "description": "Primary call-to-action button on homepage"
+  },
+  "home.metaTitle": {
+    "message": "LiveContainer",
+    "description": "Meta title used for the homepage"
+  },
+  "home.pageDescription": {
+    "message": "Run iOS apps in a sandbox without jailbreak",
+    "description": "Meta description for the homepage"
+  },
+  "home.feature.noJailbreak.title": {
+    "message": "No Jailbreak Required",
+    "description": "Feature section title"
+  },
+  "home.feature.noJailbreak.description": {
+    "message": "Run iOS apps in a secure sandbox environment without needing to jailbreak your device.",
+    "description": "Feature description for no jailbreak"
+  },
+  "home.feature.multipleContainers.title": {
+    "message": "Multiple Containers",
+    "description": "Feature title for multiple containers"
+  },
+  "home.feature.multipleContainers.description": {
+    "message": "Create multiple isolated containers for the same app with different data.",
+    "description": "Feature description for multiple containers"
+  },
+  "home.feature.jit.title": {
+    "message": "JIT Support",
+    "description": "Feature title for JIT support"
+  },
+  "home.feature.jit.description": {
+    "message": "Optional JIT mode for better performance and compatibility with more apps.",
+    "description": "Feature description for JIT support"
   }
 }

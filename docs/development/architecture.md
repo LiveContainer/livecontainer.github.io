@@ -65,7 +65,7 @@ LiveContainer is more than a shell app—it is a small runtime that re-hosts arb
 - The loader resolves the program entry point and jumps to it; the guest then calls `UIApplicationMain` as usual.
 
 ### Multi-account support & keychain semi-separation
-- 128 keychain access groups are defined. Containers randomly pick groups to reduce cross-app keychain collisions, enabling isolated sign-ins per container.
+- [128 keychain access groups](https://github.com/LiveContainer/LiveContainer/blob/main/entitlements.xml) are defined. Containers randomly pick groups to reduce cross-app keychain collisions, enabling isolated sign-ins per container.
 
 ## Limitations
 

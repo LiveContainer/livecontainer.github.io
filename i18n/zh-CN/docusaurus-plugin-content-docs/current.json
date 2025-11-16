@@ -1,22 +1,30 @@
 {
   "version.label": {
-    "message": "Next",
+    "message": "最新",
     "description": "The label for version current"
   },
   "sidebar.docsSidebar.category.Getting Started": {
-    "message": "Getting Started",
+    "message": "快速开始",
     "description": "The label for category Getting Started in sidebar docsSidebar"
   },
   "sidebar.docsSidebar.category.Development": {
-    "message": "Development",
+    "message": "开发",
     "description": "The label for category Development in sidebar docsSidebar"
   },
   "sidebar.docsSidebar.category.FAQ": {
-    "message": "FAQ",
+    "message": "常见问题",
     "description": "The label for category FAQ in sidebar docsSidebar"
   },
   "sidebar.docsSidebar.doc.Introduction": {
-    "message": "Introduction",
+    "message": "简介",
     "description": "The label for the doc item Introduction in sidebar docsSidebar, linking to the doc intro"
+  },
+  "sidebar.docsSidebar.category.Guides": {
+    "message": "指南",
+    "description": "The label for category Guides in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.doc.Installation": {
+    "message": "安装",
+    "description": "The label for the doc item Installation in sidebar docsSidebar, linking to the doc installation"
   }
 }

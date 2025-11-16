@@ -16,7 +16,7 @@ Unfortunately, not every iOS app cooperates with LiveContainer. Before opening a
 
 1. **Update LiveContainer** to the latest stable or nightly build.
 2. Decide whether the guest is **private** or **shared** and document that choice. Some bugs only happen with shared containers.
-3. Note whether the app uses **JIT** or **JIT-less** mode. Run the [JIT-Less Diagnose](../guides/jit-less-diagnose-page.md) tool to ensure certificates are valid.
+3. Note whether the app uses **JIT** or **JIT-less** mode. Run the [JIT-Less Diagnose](/docs/guides/jit-less-diagnose-page) tool to ensure certificates are valid.
 4. If tweaks are enabled, temporarily disable them (long-press app → Settings → Tweak folder → `None`) to rule out conflicts.
 5. Use **Settings → Data Management → Export Logs** immediately after reproducing the issue and attach the zip to your report.
 6. Mention if the app is running in **multitask mode** or through another LiveContainer instance.

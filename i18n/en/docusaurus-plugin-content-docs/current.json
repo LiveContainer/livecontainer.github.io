@@ -22,5 +22,9 @@
   "sidebar.docsSidebar.category.Guides": {
     "message": "Guides",
     "description": "The label for category Guides in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.doc.Installation": {
+    "message": "Installation",
+    "description": "The label for the doc item Installation in sidebar docsSidebar, linking to the doc installation"
   }
 }

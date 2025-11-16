@@ -344,5 +344,53 @@
   "theme.tags.tagsPageTitle": {
     "message": "标签",
     "description": "The title of the tag list page"
+  },
+  "home.logoAlt": {
+    "message": "LiveContainer 标志",
+    "description": "Alt text for the homepage logo"
+  },
+  "home.heroTitle": {
+    "message": "LiveContainer",
+    "description": "Homepage hero title"
+  },
+  "home.heroSubtitle": {
+    "message": "无需越狱，在沙盒中运行 iOS 应用",
+    "description": "Homepage hero subtitle"
+  },
+  "home.getStartedButton": {
+    "message": "开始使用",
+    "description": "Primary call-to-action button on homepage"
+  },
+  "home.metaTitle": {
+    "message": "LiveContainer",
+    "description": "Meta title used for the homepage"
+  },
+  "home.pageDescription": {
+    "message": "无需越狱，在沙盒中运行 iOS 应用",
+    "description": "Meta description for the homepage"
+  },
+  "home.feature.noJailbreak.title": {
+    "message": "无需越狱",
+    "description": "Feature section title"
+  },
+  "home.feature.noJailbreak.description": {
+    "message": "无需越狱即可在安全的沙盒环境中运行 iOS 应用。",
+    "description": "Feature description for no jailbreak"
+  },
+  "home.feature.multipleContainers.title": {
+    "message": "多容器",
+    "description": "Feature title for multiple containers"
+  },
+  "home.feature.multipleContainers.description": {
+    "message": "为同一应用创建多个隔离容器，并保留不同的数据。",
+    "description": "Feature description for multiple containers"
+  },
+  "home.feature.jit.title": {
+    "message": "JIT 支持",
+    "description": "Feature title for JIT support"
+  },
+  "home.feature.jit.description": {
+    "message": "可选的 JIT 模式提升性能，并兼容更多应用。",
+    "description": "Feature description for JIT support"
   }
 }
