@@ -5,63 +5,63 @@ sidebar_position: 1
 
 # Installation
 
+:::warning
+**Important Notice Regarding Third-Party Builds of LiveContainer**
+
+We have recently noticed the appearance of certain closed-source third-party builds of LiveContainer. Please be aware that all your apps are installed within LiveContainer, which means these third-party builds **have full access to your data, including sensitive information such as keychain items and login credentials**. 
+
+For instance, if you log into YouTube within such a LiveContainer, the third-party build will have complete access to your YouTube (Google) account credentials. Please avoid using these closed-source builds unless you have absolute trust in their developers or are able to personally review the source code and build yourself. 
+ 
+Furthermore, please note that we do not provide any support for issues of these third-party builds.
+:::
+
+:::note
+It’s recommended to follow the following steps to set up JIT-Less mode for using LiveContainer without JIT. If you encounter any issues, please review [#265](https://github.com/LiveContainer/LiveContainer/issues/265) first before reporting them.
+:::
+
 ## Requirements
 
 - iOS/iPadOS 15+
+   + Multitasking requires iOS/iPadOS 16.0+
 - AltStore 2.0+ / SideStore 0.6.0+
 
-## Download Methods
-
+## Downloads
 ### Stable:
+<a href="https://celloserenity.github.io/altdirect/?url=https://raw.githubusercontent.com/LiveContainer/LiveContainer/refs/heads/main/apps.json&exclude=livecontainer" target="_blank">
+   <img src="https://github.com/CelloSerenity/altdirect/blob/main/assets/png/AltSource_Blue.png?raw=true" alt="Add AltSource" width="200">
+</a>
+<a href="https://github.com/LiveContainer/LiveContainer/releases/latest/download/LiveContainer.ipa" target="_blank">
+   <img src="https://github.com/CelloSerenity/altdirect/blob/main/assets/png/Download_Blue.png?raw=true" alt="Download .ipa" width="200">
+</a>
 
-- [AltSource (raw)](https://raw.githubusercontent.com/LiveContainer/LiveContainer/refs/heads/main/apps.json)
-- [Add to AltStore Classic](https://tinyurl.com/LCAltStoreClassic) (Requires AltStore Classic to be installed or link will not work)
-- [Add to SideStore](https://tinyurl.com/LCSideStore) (Requires SideStore to be installed or link will not work)
-- [IPA download](https://github.com/LiveContainer/LiveContainer/releases/latest/download/LiveContainer.ipa)
-  
 ### Nightly:
-
-- [AltSource (raw)](https://github.com/LiveContainer/LiveContainer/releases/download/nightly/apps_nightly.json)
-- [Add to AltStore Classic](https://tinyurl.com/LC-NAltStoreClassic) (Requires AltStore Classic to be installed or link will not work)
-- [Add to SideStore](https://tinyurl.com/LC-NSideStore) (Requires SideStore to be installed or link will not work)
-- [IPA download](https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa)
-
-- It is recommended to setup JIT-Less mode, in which LiveContainer signs your apps with your certificate from AltStore/SideStore (see the instructions below).
+<a href="https://celloserenity.github.io/altdirect/?url=https://github.com/LiveContainer/LiveContainer/releases/download/nightly/apps_nightly.json&exclude=livecontainer" target="_blank">
+   <img src="https://github.com/CelloSerenity/altdirect/blob/main/assets/png/AltSource_Blue.png?raw=true" alt="Add AltSource" width="200">
+</a>
+<a href="https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa" target="_blank">
+   <img src="https://github.com/CelloSerenity/altdirect/blob/main/assets/png/Download_Blue.png?raw=true" alt="Download .ipa" width="200">
+</a>
 
 ## Installation
+- It is recommended to setup JIT-Less mode, in which LiveContainer signs your apps with your certificate from AltStore/SideStore (see the instructions below).
 
-### JIT-Less mode (without JIT \[recommended])
-
-These steps can be bypassed if you don't mind enabling JIT for your app every time, but it is not recommended. Without JIT, guest apps need to be codesigned, which requires retrieving the certificate and password from AltStore/SideStore. 
+### JIT-Less mode (Without JIT \[recommended])
+These steps can be bypassed if you don't mind enabling JIT for your app every time, but it is not recommended. Without JIT, guest apps need to be codesigned, which requires retrieving the certificate and password from AltStore/SideStore.
 
 :::note
-JIT-Less mode does not mean you can't enable JIT for your apps. Instead, it means JIT is not required to launch an app. If you want to use JIT, see the instructions below in "JIT Support" section.
+JIT-Less mode does not mean you can't enable JIT for your apps. Instead, it means JIT is not required to launch an app. If you want to use JIT, see the instructions below in "JIT Support" section. 
 If something goes wrong, please check "JIT-Less Mode Diagnose" for more information.
 :::
 
-#### Method 1 (Requires AltStore 2.2.1+ / SideStore 0.6.2+ \[recommended])
-
-- Open Settings in LiveContainer
+#### Setup (Requires AltStore 2.2.1+ / SideStore 0.6.2+ \[recommended])
+- Open Settings in LiveContainer 
 - Tap "Import Certificate from AltStore/SideStore"
 - AltStore/SideStore will be opened and ask if you want to export the certificate. If you don't see the prompt, keep AltStore/SideStore open in the background and tap "Import Certificate from AltStore/SideStore" again.
 - Press "Export" in SideStore or set a password and export in AltStore
 - Tap "JIT-Less Mode Diagnose" and tap "Test JIT-Less Mode"
 - If it says "JIT-Less Mode Test Passed", you are good to go!
-
 :::note
 If you reinstall AltStore/SideStore using AltServer, you will need to go through these steps again or risk needing to reinstall the app.
-:::
-
-#### Method 2 (Deprecated, Requires AltStore/SideStore)
-
-- Open Settings in LiveContainer, tap "Patch AltStore/SideStore", and the app will switch to SideStore/AltStore to reinstall it with the tweak applied. If you use AltWidget, select "Keep Extension."
-- Wait for the installation to finish, then **reopen AltStore/SideStore**.
-- Return to LiveContainer and press "Test JIT-Less Mode." If it says "Test Passed," JIT-less mode is ready.
-- Install your app via the "Apps" tab.
-- Tap the run icon, it will attempt to restart LiveContainer with guest app loaded.
-
-:::note
-If you update or reinstall AltStore/SideStore, you'll need to reapply the patch. Re-patch is not needed when you refresh your store.
 :::
 
 ### Installing Apps
