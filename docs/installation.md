@@ -68,3 +68,14 @@ If you reinstall AltStore/SideStore using AltServer, you will need to go through
 - Open LiveContainer, tap the plus icon in the upper right hand corner and select IPA files to install.
 - Choose the app you want to open in the next launch.
 - You can long-press the app to manage it.
+
+### Next steps
+
+Once the basics work, explore the following guides:
+
+- [Multiple LiveContainers](./guides/multiple-livecontainers.md) — run additional containers and share apps between them.
+- [JIT Support](./guides/jit-support.md) — configure automatic JIT enablers or scripts.
+- [JIT-Less Diagnose Page](./guides/jit-less-diagnose-page.md) — verify imported certificates and troubleshoot signing issues.
+- [Tweaks](./guides/tweaks.md) — inject CydiaSubstrate tweaks globally or per app.
+- [Multitask](./guides/multitask.md) — float guest apps in resizable windows.
+- [Lock & Hide Apps](./guides/lock-app.md) — protect sensitive guests with Face ID or Strict Hiding mode.
