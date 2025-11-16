@@ -4,6 +4,23 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+// Node 25 exposes localStorage/sessionStorage accessors that throw unless a backing
+// file is provided. Docusaurus (and plugins) probe these globals during build, so
+// replace them with harmless stubs when running outside the browser.
+if (typeof window === 'undefined') {
+  ['localStorage', 'sessionStorage'].forEach((prop) => {
+    const descriptor = Object.getOwnPropertyDescriptor(globalThis, prop);
+    if (descriptor && typeof descriptor.get === 'function') {
+      Object.defineProperty(globalThis, prop, {
+        value: undefined,
+        writable: true,
+        configurable: true,
+        enumerable: false,
+      });
+    }
+  });
+}
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'LiveContainer',
