@@ -52,10 +52,14 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'zh-CN'],
+    locales: ['en', 'it', 'zh-CN'],
     localeConfigs: {
       en: {
         label: 'English',
+        direction: 'ltr',
+      },
+      'it': {
+        label: 'Italiano',
         direction: 'ltr',
       },
       'zh-CN': {
@@ -91,7 +95,7 @@ const config = {
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {
         // 支持的语言（中文搜索效果更好）
-        language: ['en', 'zh'],
+        language: ['en', 'it','zh'],
         // 索引整个站点页面（不仅仅是 docs）
         indexPages: true,
         // 搜索框高亮

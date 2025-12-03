@@ -1,0 +1,26 @@
+{
+  "version.label": {
+    "message": "Successivo",
+    "description": "The label for version current"
+  },
+  "sidebar.docsSidebar.category.Guides": {
+    "message": "Guide",
+    "description": "The label for category 'Guides' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Development": {
+    "message": "Sviluppo",
+    "description": "The label for category 'Development' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.FAQ": {
+    "message": "FAQ",
+    "description": "The label for category 'FAQ' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.doc.Introduction": {
+    "message": "Introduzione",
+    "description": "The label for the doc item 'Introduction' in sidebar 'docsSidebar', linking to the doc intro"
+  },
+  "sidebar.docsSidebar.doc.Installation": {
+    "message": "Installazione",
+    "description": "The label for the doc item 'Installation' in sidebar 'docsSidebar', linking to the doc installation"
+  }
+}
