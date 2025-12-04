@@ -33,7 +33,7 @@ Long press app -> Settings -> (container name) -> Container Preferences
 
 ## 5.6. "Safari cannot open this page because the address is invalid" when signing in through Safari
 
-Please refer to this issue: #242.
+Please refer to this issue: [#242](https://github.com/LiveContainer/LiveContainer/issues/242).
 
 ## 5.7. How can I use widgets/plugins etc.?
 

@@ -33,6 +33,6 @@ This is caused some unknown trash from previous version of LiveContainer. Here's
 1. Install Filza inside LiveContainer
 2. Find Your App Container ID in App Setting
 3. Go to settings -> data management
-4. Click "Open in Filza" under "Copy App Group Cointainer Path"
+4. Click "Open in Filza" under "Copy App Group Container Path"
 5. Go to LiveContainer -> Data -> Application
 6. Delete the folder with the same name as your app container ID

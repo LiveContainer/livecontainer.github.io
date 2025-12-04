@@ -64,7 +64,7 @@ This item should exist and its content should look like `group.com.rileytestut.A
 
 It is reported that if LiveContainer's entitlement is incorrect, you can't activate/deactivate apps in SideStore. **Please do not submit issues about incorrect entitlement as it is not a LiveContainer issue.**
 
-## 6.2.Patch Detected
+## 6.2. Patch Detected
 
 :::note
 Make sure App Group ID, App Group Accessible and Store are correct before proceeding.

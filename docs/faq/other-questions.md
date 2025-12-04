@@ -12,5 +12,5 @@ Requests for features like home page customization, changing app names/icons, an
 The following features are likely to be added to LiveContainer.
 - Install app from URL & app install URL (eta 3.3.0)
 - 3+ containers for each app (eta when SideStore 0.6.0 release)
-- ADP certificate support (eat when I get an ADP certificate for free)
+- ADP certificate support (eta when I get an ADP certificate for free)
 
