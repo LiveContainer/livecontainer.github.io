@@ -15,7 +15,7 @@
     "message": "Supporto JIT"
   },
   "home.feature.jit.description": {
-    "message": "Optional JIT mode for better performance and compatibility with more apps."
+    "message": "Modalità JIT opzionale per migliori performance e compatibilità con più app." 
   },
   "home.logoAlt": {
     "message": "LiveContainer Logo"

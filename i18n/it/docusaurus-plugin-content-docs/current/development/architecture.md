@@ -1,77 +1,77 @@
 ---
-title: System Architecture
+title: Architettura di Sistema
 sidebar_position: 2
 ---
 
-# LiveContainer Architecture Overview
+# Overview dell'architettura di LiveContainer
 
-LiveContainer is more than a shell app—it is a small runtime that re-hosts arbitrary iOS apps inside its own sandbox, layers tweak injection, and offers multitasking plus JIT-less execution. This page summarizes how the modern codebase is organized and how the launcher brings guest processes to life.
+LiveContainer è più di una shell app - è un piccolo runtime che ri-ospita app iOS arbitrarie dentro il suo sandbox, livella la tweak injection e offre il multitasking più l'esecuzione JIT-Less. Questa pagina riassume come è organizzata la codebase moderna e come il launcher esegue i processi.
 
-## Project Structure
+## Struttura del Progetto
 
-### Main executable (`LiveContainer`)
-- Entry point for the entire platform. Handles bootstrapping, data management, container lifecycle, and launches LiveProcess instances for guests.
-- When no guest is running, it presents the SwiftUI interface (`LiveContainerSwiftUI`).
+### Eseguibile principale (`LiveContainer`)
+- Punto d'ingresso per l'intera piattaforma. Gestisce il bootstrapping, la gestione dei dati, la vita dei container ed esegue istanze di LiveProcess per i guest.
+- Quando non ci sono guest in esecuzione, presenta l'interfaccia SwiftUI (`LiveContainerSwiftUI`).
 
 ### LiveContainerSwiftUI
-- SwiftUI UI layer contributed by [@hugeBlack](https://github.com/hugeBlack).
-- Hosts localization assets (`Localizable.xcstrings`). Join our [Crowdin project](https://crowdin.com/project/livecontainer) to help translate strings.
+- Layer UI SwiftUI contribuito da [@hugeBlack](https://github.com/hugeBlack).
+- Ospita gli asset delle lingue (`Localizable.xcstrings`). Unisciti al nostro [progetto Crowdin](https://crowdin.com/project/livecontainer) per aiutarci a tradurre le stringhe.
 
 ### LiveProcess
-- Lightweight helper executable that contains the actual guest loader. It runs with the same entitlements but a different bundle identifier to make multitasking and PID-based JIT enabling possible.
-- Responsible for patching the guest binary, configuring dyld, injecting tweaks, and transferring control to the app’s entry point.
+- Eseguibile leggero che contiene il guest loader. Si avvia con gli stessi entitlements ma con un bundle id diverso per consentire il multitasking e la PID-based JIT.
+- Responsabile del patching del guest binary, configurazione dyld, tweak injection e del trasferimento del controllo all'entry point dell'app.
 
 ### MultitaskSupport
-- Implements the in-app floating window system plus native iPadOS window integration.
-- Communicates with the primary container to keep app state and input routing synchronized across multiple LiveProcess instances.
+- Implementa il sistema delle floating window in app e l'integrazione nativa delle finestre di iPadOS.
+- Comunica con il container principale per mantenere lo stato dell'app e la gestione dell'input sincronizzate tra diverse istanze di LiveProcess.
 
 ### SideStore helpers
-- Code that integrates SideStore’s refresh/JIT APIs. Provides background certificate refresh, source updates, and URL scheme handling for SideStore installations.
+- Codice che integra le API del refresh/JIT di SideStore. Fornisce il refresh in background del certificato, l'aggiornamento del source e la gestione dell'URL scheme per le installazioni da SideStore.
 
 ### TweakLoader
-- Minimal substrate loader that ships inside LiveContainer.
-- Injected into every guest via a new load command; it can be overridden by replacing the `TweakLoader.dylib` symlink.
+- Substrate loader minimalista integrato in LiveContainer.
+- Iniettato in ogni guest tramite un nuovo comando; può essere cambiato sostituendo il symlink `TweakLoader.dylib`. 
 
 ### ZSign
-- Bundled signer (forked from [zhlynn/zsign](https://github.com/zhlynn/zsign) via [Feather](https://github.com/khcrysalis/Feather)).
-- LiveContainer maintains a custom branch tailored to its entitlements and multi-container requirements.
+- Signer integrato (forkato da [zhlynn/zsign](https://github.com/zhlynn/zsign) tramite [Feather](https://github.com/khcrysalis/Feather)).
+- LiveContainer mantiene un branch personalizzato legato ai suoi requisiti di entitlements e multi-container. 
 
-### Third-party libraries
-- `fishhook`, `litehook`, and `OpenSSL` live as git submodules. These power low-level hooking and crypto functionality used across the loader and signer.
+### Librerie di terze parti
+- `fishhook`, `litehook`, e `OpenSSL` sono presenti come git submodule. Permettono l'hooking e la crittografia a basso livello del loader e del signer.
 
-## How It Works
+## Come funziona
 
-### Preparing the guest executable
-- Rewrite the `__PAGEZERO` segment (`vmaddr = 0xFFFFC000`, `vmsize = 0x4000`) so the binary can be mapped inside LiveProcess.
-- Switch the Mach-O type from `MH_EXECUTE` to `MH_DYLIB`.
-- Inject a load command that loads `TweakLoader.dylib` before `UIApplicationMain` starts.
+### Preparare l'eseguibile guest
+- Riscrivi il segmento `__PAGEZERO` (`vmaddr = 0xFFFFC000`, `vmsize = 0x4000`) cosicché il binary possa essere mappato in LiveProcess.
+- Cambia il Mach-O type da `MH_EXECUTE` a `MH_DYLIB`.
+- Inietta un comando che carica `TweakLoader.dylib` prima che `UIApplicationMain` venga eseguito.
 
 ### Patching `@executable_path`
-- Modern builds hook `dyld4::APIs::_NSGetExecutablePath` using litehook/fishhook.
-- The hook calls the original implementation, makes the `config.process.mainExecutablePath` writable, and swaps the path so the guest resolves its own bundle resources.
-- Older SIGSEGV-based patching is no longer used but is documented in the [main repo](https://github.com/LiveContainer/LiveContainer/blob/main/README.md) for posterity.
+- Le build recenti sfruttano `dyld4::APIs::_NSGetExecutablePath` usando litehook/fishhook.
+- L'hook chiama l'implementazione originale, rendendo scrivibile `config.process.mainExecutablePath` e cambia il percorso per far sì che il guest risolva le suo stesse bundle resources.
+- Il vecchio patching basato sulla SIGSEGV non è più utilizzato ma è ancora documentato nella [repo principale](https://github.com/LiveContainer/LiveContainer/blob/main/README.md).
 
 ### Patching `NSBundle.mainBundle`
-- `NSBundle.mainBundle` is overridden so APIs requesting bundle metadata receive the guest bundle instead of LiveContainer’s.
+- `NSBundle.mainBundle` è overridden così le richieste API ricevono il bundle guest anziché quello di LiveContainer.
 
-### Bypassing Library Validation / Code Signing
-- When JIT is available, LiveContainer asks the configured enabler to lift the executable signature checks.
-- In JIT-less mode, the bundled ZSign re-signs each guest plus tweaks using the certificate that was imported from AltStore/SideStore.
-- The bypass is based on [Restoring Dyld Memory Loading](https://blog.xpnsec.com/restoring-dyld-memory-loading).
+### Bypassare Library Validation / Code Signing
+- Quando la JIT è disponibile, LiveContainer chiede all'enabler configurato di svegliare la signature check dell'eseguibile.
+- Nella modalità JIT-Less, ZSign ri-firma ogni guest coi tweak usando il certificato importato da AltStore/SideStore.
+- Il bypass è basato sul [Restoring Dyld Memory Loading](https://blog.xpnsec.com/restoring-dyld-memory-loading).
 
-### Launching the app
-- LiveProcess `dlopen`s the patched guest binary.
-- `TweakLoader` loads CydiaSubstrate and guest-specific tweak folders.
-- The loader resolves the program entry point and jumps to it; the guest then calls `UIApplicationMain` as usual.
+### Eseguire l'app
+- LiveProcess `dlopen` è il binario guest patchato.
+- `TweakLoader` carica CydiaSubstrate e le cartelle tweak per guest.
+- Il loader risolve l'entry point del programma e passa ad esso; poi il guest chiama `UIApplicationMain` come sempre. 
 
-### Multi-account support & keychain semi-separation
-- [128 keychain access groups](https://github.com/LiveContainer/LiveContainer/blob/main/entitlements.xml) are defined. Containers randomly pick groups to reduce cross-app keychain collisions, enabling isolated sign-ins per container.
+### Supporto al multi account e semi-separazione del keychain
+- Vengono definiti [128 keychain access groups](https://github.com/LiveContainer/LiveContainer/blob/main/entitlements.xml). I container scelgono a caso i gruppi per ridurre le collisioni tra app, abilitando accessi isolati per container.
 
-## Limitations
+## Limitazioni
 
-- Guest entitlements aren’t copied to the host. Only the base entitlements granted to LiveContainer apply.
-- App permissions (camera, media library, etc.) are global to all guests.
-- Containers share the same sandbox, so one malicious guest could read another guest’s files.
-- App extensions cannot be registered (SpringBoard is unaware of them and App IDs are limited).
-- Some multitasking scenarios still block hardware keyboards or iPhone Mirroring input.
-- Remote push notifications and custom URL scheme queries often fail because LiveContainer cannot register them with SpringBoard.
+- Gli entitlement del guest non sono copiati all'host. Valgono solo gli entitlement base garantiti a LiveContainer.
+- I permessi delle app (fotocamera, foto, ecc.) sono globali per tutti i guest.
+- I container condividono lo stesso sandbox, quindi un guest malevolo può leggere i file di un altro guest.
+- Le app extension non possono essere registrate (la SpringBoard non le vede e gli App ID sono limitati).
+- In alcuni casi il multitasking blocca le tastiere hardware o l'input di iPhone Mirroring.
+- Le notifiche push remote e gli URL scheme personalizzati spesso falliscono perché LiveContainer non può registrarli con la SpringBoard.

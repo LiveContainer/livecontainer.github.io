@@ -1,45 +1,45 @@
 ---
-title: Building from Source
+title: Compilare da Sorgente
 sidebar_position: 1
 ---
 
-# Building
+# Compilare
 
-Follow these steps if you want to build LiveContainer yourself or contribute code changes.
+Segui questi step se vuoi compilare autonomamente LiveContainer o contribuire al codice.
 
-## 1. Clone with submodules
+## 1. Clona con i submodule
 
 ```bash
 git clone --recurse-submodules https://github.com/LiveContainer/LiveContainer.git
-# or, if you already cloned:
+# o, se hai già clonato:
 git submodule update --init --recursive
 ```
 
-The repository depends on several submodules (`fishhook`, `litehook`, `OpenSSL`) that must be present before building.
+La repo dipende da diversi submodule (`fishhook`, `litehook`, `OpenSSL`) che devono essere presenti prima di compilare.
 
-## 2. Install prerequisites
+## 2. Installa prerequisiti
 
-- Xcode 15.4+ with the iOS 18 SDK (newer SDKs also work, but keep deployment targets in mind).
-- A paid or free Apple developer account so you can sign debug builds.
-- (Optional) Python 3 if you plan to run helper scripts such as `update_json.py`.
+- Xcode 15.4+ con iOS 18 SDK (gli SDK più recenti funzionano comunque, ma tieni a mente gli obbiettivi di implementazione).
+- Un account Apple developer a pagamento o gratuito per poter firmare le build di debug.
+- (Facoltativo) Python 3 se vuoi eseguire gli helper script come `update_json.py`.
 
-## 3. Configure signing
+## 3. Configura la firma
 
-Open `xcconfigs/Global.xcconfig`, set `DEVELOPMENT_TEAM[config=Debug]` (and Release if needed) to your Team ID, and ensure your bundle identifiers are unique if you run multiple local builds.
+Apri `xcconfigs/Global.xcconfig`, imposta `DEVELOPMENT_TEAM[config=Debug]` (e Release se necessario) al tuo Team ID e assicurati che i tuoi bundle id siano unici se esegui più build locali. 
 
-## 4. Build from Xcode
+## 4. Compila da Xcode
 
-1. Open `LiveContainer.xcodeproj`.
-2. Select the `LiveContainer` scheme.
-3. Choose your target device (LiveContainer must run on-device).
-4. Press **Run**.
+1. Apri `LiveContainer.xcodeproj`.
+2. Seleziona lo scheme `LiveContainer`.
+3. Scegli il tuo target device (LiveContainer deve avviarsi sul device).
+4. Premi **Esegui**.
 
-LiveProcess, MultitaskSupport extensions, and tweak helper targets are automatically built as dependencies when the main target compiles.
+LiveProcess, le estensioni MultitaskSupport e il tweak helper targets sono compilati automaticamente come dipendenze quando viene compilato il main target.
 
-## 5. Optional components
+## 5. Componenti facoltative
 
-- **TestJITLess**: contains utilities for validating JIT-less signing workflows.
-- **TweakLoader**: if you modify tweak loading, build/archive this target and replace the bundled dylib.
-- **SideStore helpers**: ensure the `SideStore` target also signs correctly if you are testing JIT automation.
+- **TestJITLess**: contiene utility per validare i workflow di firma JIT-Less
+- **TweakLoader**: se modifichi il tweak loading, compila/archivia questo target e cambia il dylib associato.
+- **SideStore helpers**: assicurati che `SideStore` target firmi correttamente se stai testando le JIT automation.
 
-After the app installs on-device, follow the [Installation guide](../installation.md) to import certificates and enable features such as JIT-less mode.
+Dopo che l'app si installa sul dispositivo, segui la [guida di Installazione](../installation.md) per importare i certificati e attivare feature come la modalità JIT-Less.
