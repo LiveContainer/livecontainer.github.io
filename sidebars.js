@@ -11,9 +11,12 @@ const sidebars = {
       label: 'Introduction',
     },
     {
-      type: 'doc',
-      id: 'installation',
+      type: 'category',
       label: 'Installation',
+      items: [
+        'installation/standalone',
+        'installation/lc_sidestore'
+      ]
     },
     {
       type: 'category',
