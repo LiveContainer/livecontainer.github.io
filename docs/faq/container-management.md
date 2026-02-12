@@ -1,61 +1,49 @@
 ---
-title: 5. Using Guest Apps
+title: Container Management
 sidebar_position: 8
 ---
 
-# 5. Using Guest Apps
+# Container Management
 
-## 5.1. Why don't apps show up in the second LiveContainer?
+## Why does my app not appear in the second LiveContainer?
 
-You need to convert app to Shared App.
-Long press app -> Settings -> Convert to Shared App
+Only shared apps are visible across multiple LiveContainer instances.
 
-## 5.2. How can I open one app in both LiveContainers? / How can I use the multi-account feature?
+- long-press app -> `Settings` -> `Convert to Shared App`
 
-1. Create a new data folder: Long press app -> Settings -> Containers -> New data folder
-2. Long press app -> Settings -> Select a container -> Run
+## How do I run multiple accounts for one app?
+
+Use multiple data containers:
+
+1. long-press app -> `Settings` -> `Containers` -> create/select data folder
+2. launch with the target container
 
 :::note
 You can create up to 128 containers per app after 3.2.58 and 3 before. You can run the same app with different Container in both LiveContainers at the same time.
 :::
 
-## 5.3. How can I open a link/webpage/url in a guest app?
+## How do I open a link in a guest app?
 
-You can share a web page to LiveContainer using [this shortcut](https://www.icloud.com/shortcuts/44ea82ce7ed8469ea24198c375db09a0). Be sure to add this shortcut to "Favorites" in share sheet actions.
+Options:
 
-## 5.4. Can't select file / File picker not working / App can't proceed without enabling notification
+- Use LiveContainer's link icon in `Apps` tab and paste URL
+- Use share-sheet shortcut flow described in guides for "Open in App"
 
-Long press app -> Settings -> Enable "Fix File Picker & Local Notification"
+## File picker or local notification flow is broken
 
-## 5.5. How to modify app settings that are supposed to be in iOS settings
+Enable app-specific fixes:
 
-Long press app -> Settings -> (container name) -> Container Preferences
+- long-press app -> `Settings` -> enable `Fix File Picker`
+- long-press app -> `Settings` -> enable `Fix Local Notifications`
 
-## 5.6. "Safari cannot open this page because the address is invalid" when signing in through Safari
+## Safari sign-in returns "address is invalid"
 
-Please refer to this issue: [#242](https://github.com/LiveContainer/LiveContainer/issues/242).
+See known issue and workarounds: [Issue #242](https://github.com/LiveContainer/LiveContainer/issues/242)
 
-## 5.7. How can I use widgets/plugins etc.?
+## Can guest apps use widgets/plugins/extensions?
 
-No, you can't. They require extra app ids. You can integrate the plugin with LiveContainer if you really want to use that plugin, but doing so will cost 1 app id.
+Generally no. They require extra app ids. You can integrate the plugin with LiveContainer if you really want to use that plugin, but doing so will cost 1 app id.
 
-## 5.8 How can I enable JIT for guest apps?
+## How do I enable JIT for a guest app?
 
-LiveContainer has built-in support for popular JIT enablers. You can set it up in LiveContainer settings -> JIT section.
-Mark an app as JIT needed by going to: long press app -> settings -> enable Launch with JIT. LiveContainer will wait for JIT to be enabled and try to contact the JIT enabler you configured.
-
-:::note
-StikDebug is available in LiveContainer 3.3.51+
-:::
-
-For *StikDebug* (Recommended), install StikDebug as a separate app, and in LiveContainer settings, choose "StikDebug" under JIT enablers.
-
-For *SideJITServer/JITStreamer 2.0*, please input both your address and device UDID.
-
-### The correct way to enable JIT for an app inside LiveContainer
-
-0. Don't enable JIT for LiveContainer now
-1. Set up your JIT enabler as said above
-2. Enable "Launch with JIT" as said above
-3. Tap run
-4. If your JIT enabler doesn't support automatic enabling, you need to enable JIT for LiveContainer from your JIT enabler while keeping the "waiting for JIT" prompt open.
+See the canonical guide: [JIT Support](../guides/jit-support.md)

@@ -5,7 +5,7 @@ sidebar_position: 9
 
 # 关于 JIT-Less 诊断页面
 
-<img width="300" alt="Image" src="https://github.com/user-attachments/assets/03f6392d-1a2a-4e8b-b03a-e6e7568346d2" />
+<img width="300" alt="JIT-Less Diagnose Page" src="/img/jit-less-diagnose/1.png" />
 
 :::note
 该页面在 LiveContainer 3.1.51+ 中提供。

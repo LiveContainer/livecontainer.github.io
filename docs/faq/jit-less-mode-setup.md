@@ -1,22 +1,51 @@
 ---
-title: 2. JIT-Less Mode Setup
+title: JIT-Less Issues
 sidebar_position: 6
 ---
 
+# JIT-Less Setup & Diagnose
 
-# 2. JIT-Less Mode Setup
+Use this page when certificate import fails or diagnose fields are not healthy.
 
-**Please read the instruction about setting up JIT-Less mode carefully before submitting any issues about this.**
+## Healthy diagnose state
 
-## 2.1. Cannot Access App Group
+In `Settings -> JIT-Less Mode Diagnose`, target values are:
 
-There's something wrong with your SideStore/AltStore and LiveContainer setup. Please refer to [Section 6](https://github.com/LiveContainer/LiveContainer/issues/265#issuecomment-2558409380)
+- `App Group Accessible = Yes`
+- `Store` correctly detected
+- `Patch Detected = Yes`
+- `Certificate Data = Yes`
+- `Password Found = Yes`
+- `Certificate Last Update` refreshes after reopening store app
 
-## 2.1. SideStore Crash After Applying the Patch
+## App Group inaccessible or Store is `Unknown`
 
-Please strictly follow SideStore installation guide before applying the patch. i.e. Sideload SideStore ipa in SideStore immediately after you Sideload SideStore from AltServer.
+Checklist:
 
-## 2.2. (SparseStore)Wrong SideStore Opened / SideStore is no Longer Available
+1. SideStore installed through AltServer.
+2. LiveContainer installed directly through AltStore/SideStore.
+3. Same Apple account used for SideStore and LiveContainer.
+4. Entitlements were preserved by your install/sign flow.
 
-1. Patch SideStore -> Archive Only
-2. Patched SideStore is saved in LiveContainer's documents folder, you can see it in the "Files" app. Sideload it in the right SideStore to apply the patch.
+If still broken, inspect `Entitlement File` in diagnose page and verify `com.apple.security.application-groups` exists and looks correct.
+
+## Patch Detected is `No`
+
+1. Force-close store app.
+2. Reopen store app.
+3. Return to LiveContainer and refresh diagnose page.
+4. If still `No`, patch store again.
+
+## SideStore crashes after patching
+
+Reinstall SideStore with the recommended order, then repatch only after base install is stable.
+
+## Wrong SideStore instance opened (SparseStore mismatch)
+
+1. Patch with `Archive Only`.
+2. Get patched IPA from LiveContainer documents in Files.
+3. Install that patched IPA into the intended SideStore instance.
+
+## Cert import worked before but now fails
+
+If AltStore/SideStore was reinstalled via AltServer, re-import certificate in LiveContainer. Old references can become stale.

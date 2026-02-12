@@ -17,22 +17,3 @@ Before you start, please note that this feature is still in beta and may not wor
 1. To use multitasking, ensure you select "Keep Extension" when installing via SideStore/AltStore.
 2. If you want to enable JIT for multitasked apps, you’ll need a JIT enabler that supports attaching by PID.
 :::
-
-## Known issues
-
-`This container is currently in use livecontainer2`
-
-You may encounter this error when trying to multitask an app which is already running in another LiveContainer or have been launched before. It is not a bug but a limitation of LiveContainer. To fix it, just restart another LiveContainer or kill the app in the other LiveContainer.
-
----
-
-`lc.container.unableToMoveContainerFromLiveProcess`
-
-This is caused some unknown trash from previous version of LiveContainer. Here's how to fix it:
-
-1. Install Filza inside LiveContainer
-2. Find Your App Container ID in App Setting
-3. Go to settings -> data management
-4. Click "Open in Filza" under "Copy App Group Container Path"
-5. Go to LiveContainer -> Data -> Application
-6. Delete the folder with the same name as your app container ID
