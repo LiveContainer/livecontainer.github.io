@@ -79,3 +79,9 @@ Once LiveContainer+SideStore is installed, you need to import the certificate fr
 
 ## Auto-Refresh Shortcut
 You can use the auto-refresh shortcut just like you would with the standalone SideStore—simply replace SideStore's "Refresh All Apps" action with LiveContainer's.
+
+## Next steps
+
+- [Installation Overview](/docs/installation) — compare installation paths and migration choices.
+- [JIT Support](/docs/guides/jit-support) — configure JIT enablers after setup.
+- [JIT-Less Diagnose Page](/docs/guides/jit-less-diagnose-page) — validate certificate import and signing status.

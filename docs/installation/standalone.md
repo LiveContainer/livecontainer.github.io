@@ -59,6 +59,7 @@ If you reinstall AltStore/SideStore using AltServer, you will need to go through
 
 Once the basics work, explore the following guides:
 
+- [Installation Overview](/docs/installation) — compare installation paths and switch if your setup needs change.
 - [Multiple LiveContainers](/docs/guides/multiple-livecontainers) — run additional containers and share apps between them.
 - [JIT Support](/docs/guides/jit-support) — configure automatic JIT enablers or scripts.
 - [JIT-Less Diagnose Page](/docs/guides/jit-less-diagnose-page) — verify imported certificates and troubleshoot signing issues.

@@ -13,6 +13,10 @@ const sidebars = {
     {
       type: 'category',
       label: 'Installation',
+      link: {
+        type: 'doc',
+        id: 'installation',
+      },
       items: [
         'installation/standalone',
         'installation/lc_sidestore'
