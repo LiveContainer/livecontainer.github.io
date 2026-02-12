@@ -21,11 +21,11 @@
   },
   "link.item.label.GitHub": {
     "message": "GitHub",
-    "description": "The label of footer link with label=GitHub linking to https://github.com/khanhduytran0/LiveContainer"
+    "description": "The label of footer link with label=GitHub linking to https://github.com/LiveContainer/LiveContainer"
   },
   "link.item.label.Issues": {
     "message": "Issues",
-    "description": "The label of footer link with label=Issues linking to https://github.com/khanhduytran0/LiveContainer/issues"
+    "description": "The label of footer link with label=Issues linking to https://github.com/LiveContainer/LiveContainer/issues"
   },
   "copyright": {
     "message": "Copyright © 2025 LiveContainer Project. Built with Docusaurus.",

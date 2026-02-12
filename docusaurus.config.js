@@ -126,7 +126,7 @@ const config = {
             label: 'Docs',
           },
           {
-            href: 'https://github.com/khanhduytran0/LiveContainer',
+            href: 'https://github.com/LiveContainer/LiveContainer',
             label: 'GitHub',
             position: 'right',
           },
@@ -161,11 +161,11 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/khanhduytran0/LiveContainer',
+                href: 'https://github.com/LiveContainer/LiveContainer',
               },
               {
                 label: 'Issues',
-                href: 'https://github.com/khanhduytran0/LiveContainer/issues',
+                href: 'https://github.com/LiveContainer/LiveContainer/issues',
               },
             ],
           },

@@ -10,7 +10,7 @@ sidebar_position: 6
 
 ## 2.1. Cannot Access App Group
 
-C'è qualcosa che non va col setup di SideStore/AltStore e LiveContainer. Vedi la [Sezione 6](https://github.com/khanhduytran0/LiveContainer/issues/265#issuecomment-2558409380).
+C'è qualcosa che non va col setup di SideStore/AltStore e LiveContainer. Vedi la [Sezione 6](https://github.com/LiveContainer/LiveContainer/issues/265#issuecomment-2558409380).
 
 ## 2.1. SideStore crasha dopo avergli applicato la patch
 
