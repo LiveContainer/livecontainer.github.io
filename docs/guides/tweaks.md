@@ -48,7 +48,7 @@ For shared apps, `Tweak Folder` is read-only in app settings. If needed, switch 
 
 1. Import: `Tweaks` tab -> `+` -> `Import Tweak`
 2. New folder: `Tweaks` tab -> `+` -> `New Folder`
-3. Rename: long-press an item -> `Rename`
+3. Rename: hold an item -> `Rename`
 4. Delete: swipe left on an item -> `Delete`
 
 ## Tweak Signing

@@ -29,6 +29,7 @@ const sidebars = {
         'guides/add-to-home-screen',
         'guides/sources',
         'guides/app-settings',
+        'guides/containers-and-external-data',
         'guides/data-management',
         'guides/jit-support',
         'guides/jit-less-diagnose-page',

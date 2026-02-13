@@ -5,7 +5,7 @@ sidebar_position: 3
 
 # App Settings
 
-Open app settings by long-pressing an app card in LiveContainer and tapping `Settings`.
+Open app settings by holding an app card in LiveContainer and tapping `Settings`.
 
 This page documents current options in the app settings UI and clarifies differences from older docs.
 
@@ -100,6 +100,7 @@ These are per-app compatibility toggles and should be changed one at a time when
 
 ## Related
 
+- [Multiple Containers and External Data Folder](./containers-and-external-data.md)
 - [JIT Support](./jit-support.md)
 - [Tweaks](./tweaks.md)
 - [Multiple Instances](./multiple-livecontainers.md)

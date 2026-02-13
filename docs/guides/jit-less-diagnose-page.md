@@ -1,84 +1,91 @@
 ---
-title: JIT-Less Diagnostics
+title: JIT-Less
 sidebar_position: 9
 ---
 
-# About JIT-Less Diagnose Page
+# JIT-Less
+
+If you are using the bundled SideStore build, complete the setup in [LiveContainer + SideStore: Setup after Installing](/docs/installation/lc_sidestore#setup-after-installing) first.
+If you are using standalone LiveContainer, follow [Standalone LiveContainer: JIT-Less mode setup](/docs/installation/standalone#jit-less-mode-without-jit-recommended).
+
+## JIT-Less actions in Settings
+
+Open `Settings` in LiveContainer and find the `JIT-Less` section.
+
+- `Import Certificate`: Import a `.p12` certificate file and password manually from Files.
+- `Import Certificate from SideStore`: Ask your store app to export certificate data to LiveContainer.
+- `Refresh Certificate from SideStore`: Re-import certificate data from your store and overwrite the current one.
+- `Remove Certificate`: Remove imported certificate data/password from LiveContainer.
+- `JIT-Less Diagnose`: Open the diagnosis page to verify entitlement access and certificate state.
+
+On the bundled SideStore build, this refresh can read the certificate directly from the built-in SideStore after confirmation.
+Use `Refresh Certificate from AltStore/SideStore` after you reinstall, re-login, or refresh your store environment, especially if certificate-related checks become stale or fail.
 
 <img width="300" alt="JIT-Less Diagnose Page" src="/img/jit-less-diagnose/1.png" />
 
-:::note
-This page exists in LiveContainer 3.1.51+
-:::
-
-If you successfully setup JIT-Less mode, your JIT-Less Mode Diagnose should look like the screenshot above. The most important indicator is "Certificate Last Up Date". This field should change if you reopens your store. If not, follow the following instructions to diagnose your setup.
+If you successfully setup JIT-Less mode, your **JIT-Less Mode Diagnose** should look like the screenshot above. The most important indicator is "Certificate Last Update Date". This field should change if you reopens your store. If not, follow the following instructions to diagnose your setup.
 
 ## App Group ID, App Group Accessible, Store
 
-The "App Group ID" field should end with the exact same 10 characters as the "Bundle Identifier". "App Group Accessible" should be "Yes" and "Store" should correctly show your store.
+- `App Group ID`: The identifier of the detected App Group.
+  **Expected**: not `Unknown`.
+- `App Group Accessible`: Indicates if LiveContainer can read/write to the shared container path.
+  **Expected**: `Yes`.
+- `Store`: The detected installation source (`AltStore`, `SideStore`, `ADP`, or `Unknown`).
+  **Expected**: matches your real install source and is normally not `Unknown`.
 
-> For example, if your Bundle Identifier is `com.kdt.livecontainer.A1B2C3D4E5` ,then your app group id should be `group.com.SideStore.SideStore.A1B2C3D4E5` if you use SideStore, or `group.com.rileytestut.AltStore.A1B2C3D4E5` if you use AltStore.
+If the App Group is inaccessible, resolve this issue before checking certificate details.
 
-If it only say `group.com.SideStore.SideStore` or `Unknown`, then there's something wrong with your SideStore setup. Please check:
+## Entitlement File
 
-- SideStore is installed through AltServer
-- LiveContainer is installed directly through SideStore/AltStore
-- Don't try to install LiveContainer through AltStore PAL
-- Account used to install SideStore and LiveContainer matches. This can be checked by going to iOS settings -> General -> VPN & Device Management -> (your account name). Check if both LiveContainer and SideStore are under the same account.
+Tap `Entitlement File` to inspect the parsing results of the main executable's entitlements.
 
-:::note
-> "Entitlement File" exists in 3.2.51+
-:::
+This view verifies:
 
-If you meet the above 4 criteria but App Group is still not accessible, tap "Entitlement File" and check the entitlement extracted form LiveContainer's main executable. A correct entitlement may look like this:
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
- <key>application-identifier</key>
- <string>A1B2C3D4E5.com.kdt.livecontainer.A1B2C3D4E5</string>
- <key>com.apple.developer.team-identifier</key>
- <string>A1B2C3D4E5</string>
- <key>com.apple.security.application-groups</key>
- <array>
-  <string>group.com.rileytestut.AltStore.A1B2C3D4E5</string>               <--- Important!
-  <string>group.com.SideStore.SideStore.A1B2C3D4E5</string>               <--- Important!
- </array>
- <key>get-task-allow</key>
- <true/>
- <key>keychain-access-groups</key>
- <array>
-  <string>A1B2C3D4E5.com.kdt.livecontainer.shared</string>
-  <string>A1B2C3D4E5.com.kdt.livecontainer.shared.1</string>
-  <string>A1B2C3D4E5.com.kdt.livecontainer.shared.2</string>
- </array>
-</dict>
-</plist>
-
-```
+- `Bundle Identifier`: Compares app bundle identifier with value derived from `application-identifier`.  
+  **Expected**: marked correct.
+- `Team ID`: Value from `com.apple.developer.team-identifier`.  
+  **Expected**: valid Team ID, not `Unknown`.
+- `get-task-allow`: Whether debug entitlement exists.  
+  **Expected**: `Yes`.
+- `com.apple.security.application-groups Correct`: Checks whether app-groups list is non-empty.  
+  **Expected**: `Yes`.
+- `keychain-access-groups Correct`: Checks whether LiveContainer keychain groups (`.shared` and indexed groups) are complete.  
+  **Expected**: `Yes`.
 
 The most important part is `com.apple.security.application-groups`, which determines whether LiveContainer can access SideStore's app group.
 This item should exist and its content should look like `group.com.rileytestut.AltStore.A1B2C3D4E5` and `group.com.SideStore.SideStore.A1B2C3D4E5`. If this item is missing or it looks like `group.com.SideStore.SideStore.A1B2C3D4E5.A1B2C3D4E5`, then this is an bug of SideStore, not LiveContainer. The only thing you can do is to remove both LiveContainer and SideStore, and then install them again and check if this issue is solved.
 
 It is reported that if LiveContainer's entitlement is incorrect, you can't activate/deactivate apps in SideStore. **Please do not submit issues about incorrect entitlement as it is not a LiveContainer issue.**
 
-## Patch Detected
+## Certificate details
 
-:::note
-Make sure App Group ID, App Group Accessible and Store are correct before proceeding.
-:::
+This section displays the status of the signing certificate used for JIT-less mode.
 
-It should say "Yes". If not, close your store from the app switcher, reopen it and refresh this diagnose page.
-If still not, patch your store again.
+- `Certificate Last Up Date`: The timestamp of the last certificate refresh/import.  
+  **Expected**: a real timestamp, not `Unknown`.
+- `Certificate Team ID`: The Team ID extracted from the certificate.  
+  **Expected**: Your Apple Developer Team ID, not `Unknown`.
+- `Expected Team ID`: Team ID read from LiveContainer entitlement, used for mismatch detection.  
+  This row appears only when mismatch is detected.
+- `Certificate Status`: `Valid`, `Revoked`, or `Unknown`.  
+  **Expected**: `Valid`.
+- `Certificate Validate Until`: The expiration date of the certificate.  
+  **Expected**: a real timestamp while certificate is valid.
+- `Certificate Data Found`: whether imported certificate data exists.
+  **Expected**: `Yes`.
+- `Certificate Password Found`: whether imported certificate password exists.
+  **Expected**: `Yes` in normal certificate export/import flows.
 
-## Certificate Data / Password Found, Certificate Last Up Date
+## Test JIT-Less Mode
 
-:::note
-Make sure 1 & 2 are correct before proceeding.
-:::
+The `Test JIT-Less Mode` button performs a functional validation rather than a static check.
 
-If you patched your store correctly, Certificate Data / Password Found should turn to "Yes" if you refresh the diagnose page, and "Certificate Last Up Date" should show the time when you last opens your store.
+When tapped, LiveContainer will:
+1. Create a temporary test app bundle.
+2. Sign it using the current certificate and password.
+3. Verify code-sign validity of the signed test dylib (`TestJITLess.dylib`).
 
-If Certificate Data / Password Found are "Yes", but "Certificate Last Up Date" is unknown, but apps are working correctly, you might have just updated from version prior to 3.1.51, patch your store again and this field should display correctly.
+The button requires `Certificate Data Found = Yes` to start. If password/config is still invalid, signing fails in this step.
+
+If this test fails, JIT-less launch will likely fail.

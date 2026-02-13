@@ -9,39 +9,53 @@ sidebar_position: 4
 Some actions are destructive. Back up important app/container data first.
 :::
 
-## Available tools
+## Clean unused data folders
 
-- clean unused data folders
-- clean keychain
-- move App Group folder between private and shared locations
-- move dangling shared folders out
-- clear icon cache
+:::note
+This action is shown in the primary LiveContainer only.
+:::
 
-## Recommended usage
+Deletes local data folders that are no longer referenced by any app container.
 
-### Clean unused data folders
+## Move App Group folder
 
-Use after deleting apps/containers to remove orphaned folders and reclaim space.
+:::note
+This action is shown in the primary LiveContainer only.
+:::
 
-### Clean keychain
+- `Move AppGroup from private to shared`
+- `Move AppGroup from shared to private`
 
-Use only when credential/keychain state is corrupted and other fixes failed.
+These two actions move App Group files between private and shared locations. They are blocked if the destination side is not empty.
 
-### App Group migration actions
+## Move dangling shared folders
 
-Use when shared/private storage state is mismatched due to install/path changes.
+:::note
+This action is shown in the primary LiveContainer only.
+:::
 
-### Move dangling shared folders
+Moves unreferenced shared resources back to private locations:
 
-Use when shared resources remain in wrong place after migration, reinstall, or interrupted operations.
+- shared data folders not used by shared apps
+- shared tweak folders not used by shared apps (except `TweakLoader.dylib`)
 
-## Safe procedure
+Useful after migration/reinstall interruptions.
 
-1. Export logs.
-2. Back up critical data.
-3. Run one operation.
-4. Relaunch and verify.
-5. Repeat only if required.
+## Clean keychain
+
+Deletes keychain items (`GenericPassword`, `InternetPassword`, `Certificate`, `Key`, `Identity`) from current keychain scope.
+Use carefully because this is broad and can sign you out of apps.
+
+## Clear icon cache
+
+Clears app icon cache for currently loaded app list.
+
+## Path tools
+
+Use these tools when you need to inspect files manually or provide exact paths for debugging.
+
+- `Copy ... Path`: copies the full path for `App Group Container`, `Container`, or `LiveContainer Bundle` to clipboard.
+- `Open in Filza`: appears only when Filza is installed, and opens the selected location directly in Filza.
 
 ## Related
 

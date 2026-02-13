@@ -19,7 +19,7 @@ Use this order to avoid false failures:
 
 ## Enable JIT for an app
 
-1. Long-press app -> `Settings` -> enable `Launch with JIT`.
+1. Hold app -> `Settings` -> enable `Launch with JIT`.
 2. Configure one enabler below.
 3. Launch app. LiveContainer enters a waiting state until JIT is attached.
 4. If your enabler is manual, trigger JIT while waiting prompt is still open.
