@@ -32,7 +32,6 @@ const sidebars = {
         'guides/containers-and-external-data',
         'guides/data-management',
         'guides/jit-support',
-        'guides/jit-less-diagnose-page',
         'guides/tweaks',
         'guides/multiple-livecontainers',
         'guides/multitask',

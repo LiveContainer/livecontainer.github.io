@@ -63,7 +63,7 @@ Once the basics work, explore the following guides:
 - [Sources](/docs/guides/sources) — add source feeds and install apps directly from source lists.
 - [Multiple LiveContainers](/docs/guides/multiple-livecontainers) — run additional containers and share apps between them.
 - [JIT Support](/docs/guides/jit-support) — configure automatic JIT enablers or scripts.
-- [JIT-Less Diagnose Page](/docs/guides/jit-less-diagnose-page) — verify imported certificates and troubleshoot signing issues.
+- [JIT-Less Setup & Diagnose](/docs/faq/jit-less-mode-setup) — verify imported certificates and troubleshoot signing issues.
 - [Tweaks](/docs/guides/tweaks) — inject CydiaSubstrate tweaks globally or per app.
 - [Multitask](/docs/guides/multitask) — float guest apps in resizable windows.
 - [Lock & Hide Apps](/docs/guides/lock-app) — protect sensitive guests with Face ID or Strict Hiding mode.

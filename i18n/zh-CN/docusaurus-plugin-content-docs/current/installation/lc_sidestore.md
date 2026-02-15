@@ -89,4 +89,4 @@ sidebar_position: 2
 
 - [安装总览](../installation.md) — 对比路径差异并评估迁移方案。
 - [JIT 支持](../guides/jit-support.md) — 安装后配置 JIT 启用方式。
-- [JIT-Less 诊断页面](../guides/jit-less-diagnose-page.md) — 校验证书导入和签名状态。
+- [JIT-Less 设置与诊断](../faq/jit-less-mode-setup.md) — 校验证书导入和签名状态。

@@ -15,7 +15,7 @@ title: 兼容性信息
 
 1. **更新 LiveContainer** 至最新稳定版或 Nightly
 2. 确认应用是 **私有** 还是 **共享**，很多问题只在共享容器出现
-3. 记录应用使用的是 **JIT** 还是 **JIT-Less**。先运行 [JIT-Less 诊断](/docs/guides/jit-less-diagnose-page) 以验证证书
+3. 记录应用使用的是 **JIT** 还是 **JIT-Less**。先运行 [JIT-Less 设置与诊断](/docs/faq/jit-less-mode-setup) 以验证证书
 4. 若启用了 Tweaks，请暂时关闭（长按应用 → 设置 → Tweak 文件夹 → `None`）排除冲突
 5. 复现问题后立即进入 **设置 → 数据管理 → 导出日志**，在报告中附上 zip
 6. 说明应用是否在 **多任务** 模式或另一个 LiveContainer 实例中运行

@@ -38,5 +38,5 @@ sidebar_position: 1
 ## 安装后继续
 
 - [JIT 支持](./guides/jit-support.md)
-- [JIT-Less 诊断页面](./guides/jit-less-diagnose-page.md)
+- [JIT-Less 设置与诊断](./faq/jit-less-mode-setup.md)
 - [多实例 LiveContainer](./guides/multiple-livecontainers.md)

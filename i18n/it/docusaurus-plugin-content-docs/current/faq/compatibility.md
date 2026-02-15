@@ -16,7 +16,7 @@ Sfortunatamente, non tutte le app funzionano con LiveContainer. Prima di aprire 
 
 1. **Aggiorna LiveContainer** all'ultima build stable o nightly.
 2. Decidi se l'app è **private** o **shared** e documenta la scelta. Alcuni bug si presentano solo nei container shared.
-3. Guarda se l'app è in modalità **JIT** o **JIT-Less**. Esegui la [Diagnosi JIT-Less](/docs/guides/jit-less-diagnose-page) per assicurarti che i certificati siano validi.
+3. Guarda se l'app è in modalità **JIT** o **JIT-Less**. Esegui [Setup e Diagnosi JIT-Less](/docs/faq/jit-less-mode-setup) per assicurarti che i certificati siano validi.
 4. Se i tweak sono abilitati, disattivali temporaneamente (premi l'app → Impostazioni → Tweak folder → `None`) per evitare conflitti.
 5. Usa **Impostazioni → Gestione Dati → Esporta Log** subito dopo aver riprodotto il problema e allega lo zip del report.
 6. Indica se l'app è avviata in **multitask mode** o tramite un'altra istanza di LiveContainer.

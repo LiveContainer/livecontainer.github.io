@@ -36,6 +36,6 @@ Use only official, open-source builds of LiveContainer. Third-party closed-sourc
 ## After installation
 
 - [JIT Support](./guides/jit-support.md)
-- [JIT-Less Diagnose Page](./guides/jit-less-diagnose-page.md)
+- [JIT-Less Setup & Diagnose](./faq/jit-less-mode-setup.md)
 - [Multiple LiveContainers](./guides/multiple-livecontainers.md)
 - [Troubleshooting FAQ](./faq/common-issues.md)

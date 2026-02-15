@@ -75,7 +75,7 @@ Una volta che i fondamenti funzionano, segui le guide qui sotto:
 
 - [LiveContainer Multipli](/docs/guides/multiple-livecontainers) — esegui più container e condividi le app tra di essi.
 - [Supporto JIT](/docs/guides/jit-support) — configura automaticamente JIT enabler o script.
-- [Pagina di Diagnosi JIT-Less](/docs/guides/jit-less-diagnose-page) — verifica certificati importati e risolvi problemi di firma.
+- [Setup e Diagnosi JIT-Less](/docs/faq/jit-less-mode-setup) — verifica certificati importati e risolvi problemi di firma.
 - [Tweaks](/docs/guides/tweaks) — inietta tweak CydiaSubstrate globalmente o per app.
 - [Multitask](/docs/guides/multitask) — gestisci più app in finestre ridimensionabili.
 - [Blocca e Nascondi App](/docs/guides/lock-app) — proteggi app sensibili con Face ID o Strict Hiding mode.

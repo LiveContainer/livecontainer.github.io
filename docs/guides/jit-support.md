@@ -89,5 +89,5 @@ Use an enabler that supports PID-based attach.
 ## Related
 
 - [Multiple LiveContainers](./multiple-livecontainers.md)
-- [JIT-Less Diagnose Page](./jit-less-diagnose-page.md)
+- [JIT-Less Setup & Diagnose](../faq/jit-less-mode-setup.md)
 - [Troubleshooting](../faq/common-issues.md)
