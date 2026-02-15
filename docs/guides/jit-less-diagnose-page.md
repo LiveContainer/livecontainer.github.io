@@ -1,25 +1,9 @@
 ---
-title: JIT-Less
+title: JIT-Less Diagnose Page
 sidebar_position: 9
 ---
 
-# JIT-Less
-
-If you are using the bundled SideStore build, complete the setup in [LiveContainer + SideStore: Setup after Installing](/docs/installation/lc_sidestore#setup-after-installing) first.
-If you are using standalone LiveContainer, follow [Standalone LiveContainer: JIT-Less mode setup](/docs/installation/standalone#jit-less-mode-without-jit-recommended).
-
-## JIT-Less actions in Settings
-
-Open `Settings` in LiveContainer and find the `JIT-Less` section.
-
-- `Import Certificate`: Import a `.p12` certificate file and password manually from Files.
-- `Import Certificate from SideStore`: Ask your store app to export certificate data to LiveContainer.
-- `Refresh Certificate from SideStore`: Re-import certificate data from your store and overwrite the current one.
-- `Remove Certificate`: Remove imported certificate data/password from LiveContainer.
-- `JIT-Less Diagnose`: Open the diagnosis page to verify entitlement access and certificate state.
-
-On the bundled SideStore build, this refresh can read the certificate directly from the built-in SideStore after confirmation.
-Use `Refresh Certificate from AltStore/SideStore` after you reinstall, re-login, or refresh your store environment, especially if certificate-related checks become stale or fail.
+# JIT-Less Diagnose Page
 
 <img width="300" alt="JIT-Less Diagnose Page" src="/img/jit-less-diagnose/1.png" />
 

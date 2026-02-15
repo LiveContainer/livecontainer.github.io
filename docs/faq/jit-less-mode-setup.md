@@ -5,47 +5,64 @@ sidebar_position: 6
 
 # JIT-Less Setup & Diagnose
 
-Use this page when certificate import fails or diagnose fields are not healthy.
+Use this page when `Settings -> JIT-Less Mode Diagnose` shows red values or `Test JIT-Less Mode` fails.
 
-## Healthy diagnose state
+Healthy state:
 
-In `Settings -> JIT-Less Mode Diagnose`, target values are:
-
+- `App Group ID` is not `Unknown`
 - `App Group Accessible = Yes`
-- `Store` correctly detected
-- `Patch Detected = Yes`
-- `Certificate Data = Yes`
-- `Password Found = Yes`
-- `Certificate Last Update` refreshes after reopening store app
+- `Store` matches your real install source (not `Unknown`)
+- `Certificate Data Found = Yes`
+- `Certificate Password Found = Yes`
+- `Certificate Status = Valid`
+- `Certificate Team ID` matches `Expected Team ID`
+- `Certificate Last Update Date` is not `Unknown`
 
-## App Group inaccessible or Store is `Unknown`
+## `App Group ID = Unknown` / `App Group Accessible = No` / `Store = Unknown`
 
-Checklist:
+Causes:
 
-1. SideStore installed through AltServer.
-2. LiveContainer installed directly through AltStore/SideStore.
-3. Same Apple account used for SideStore and LiveContainer.
-4. Entitlements were preserved by your install/sign flow.
+- Entitlements were broken.
+- LiveContainer was not installed through AltStore/SideStore or Impactor.
+- LiveContainer and Store are signed with different Apple accounts (Team ID mismatch).
 
-If still broken, inspect `Entitlement File` in diagnose page and verify `com.apple.security.application-groups` exists and looks correct.
+Fixes:
 
-## Patch Detected is `No`
+1. Ensure LiveContainer and AltStore/SideStore are signed with the same Apple account.
+2. Reinstall LiveContainer via AltStore/SideStore and keep required extensions/entitlements (`Use Main Profile` / `Keep All Extensions`).
+3. In Diagnose -> `Entitlement File`, verify: `get-task-allow = Yes`, `application-groups Correct = Yes`, and `keychain-access-groups Correct = Yes`.
 
-1. Force-close store app.
-2. Reopen store app.
-3. Return to LiveContainer and refresh diagnose page.
-4. If still `No`, patch store again.
+## `Certificate Data Found = No` / `Certificate Password Found = No` / `Certificate Last Update Date = Unknown`
 
-## SideStore crashes after patching
+Causes:
 
-Reinstall SideStore with the recommended order, then repatch only after base install is stable.
+- Certificate import was not completed.
 
-## Wrong SideStore instance opened (SparseStore mismatch)
+Fixes:
 
-1. Patch with `Archive Only`.
-2. Get patched IPA from LiveContainer documents in Files.
-3. Install that patched IPA into the intended SideStore instance.
+1. Re-import the certificate in `Settings` (file import or import from Store).
+2. Refresh Diagnose.
 
-## Cert import worked before but now fails
+## `Certificate Team ID` does not match `Expected Team ID` (red)
 
-If AltStore/SideStore was reinstalled via AltServer, re-import certificate in LiveContainer. Old references can become stale.
+Causes:
+
+- Imported `.p12` belongs to a different Apple Developer Team.
+
+Fixes:
+
+1. Remove current certificate data.
+2. Re-import a certificate that matches the current LiveContainer signing account.
+
+## `Certificate Status = Revoked/Unknown` / `Certificate Validate Until = Unknown` / `Test JIT-Less Mode` fails
+
+Causes:
+
+- Certificate is revoked/expired.
+
+Fixes:
+
+1. Re-import a valid certificate and ensure password is correct.
+2. Reopen Store and refresh apps, then return and refresh Diagnose.
+3. Run `Test JIT-Less Mode` again.
+4. If it still fails, reinstall or re-patch Store.
