@@ -5,7 +5,9 @@ sidebar_position: 6
 
 # JIT-Less Setup & Diagnose
 
-Use this page when `Settings -> JIT-Less Mode Diagnose` shows red values or `Test JIT-Less Mode` fails.
+<img width="300" alt="JIT-Less Diagnose Page" src="/img/jit-less-diagnose/1.png" />
+
+If you successfully setup JIT-Less mode, your **JIT-Less Mode Diagnose** should look like the screenshot above. Use this page when it shows red values or `Test JIT-Less Mode` fails.
 
 Healthy state:
 
