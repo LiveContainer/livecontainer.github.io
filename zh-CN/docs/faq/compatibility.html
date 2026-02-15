@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">兼容性信息 | LiveContainer</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://livecontainer.github.io/zh-CN/docs/faq/compatibility"><meta data-rh="true" property="og:locale" content="zh_CN"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="it"><meta data-rh="true" name="docusaurus_locale" content="zh-CN"><meta data-rh="true" name="docsearch:language" content="zh-CN"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="兼容性信息 | LiveContainer"><meta data-rh="true" name="description" content="并非所有 iOS 应用都能在 LiveContainer 中运行。提交 Issue 前，请先完成以下检查并收集所需资料。"><meta data-rh="true" property="og:description" content="并非所有 iOS 应用都能在 LiveContainer 中运行。提交 Issue 前，请先完成以下检查并收集所需资料。"><link data-rh="true" rel="icon" href="/zh-CN/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://livecontainer.github.io/zh-CN/docs/faq/compatibility"><link data-rh="true" rel="alternate" href="https://livecontainer.github.io/docs/faq/compatibility" hreflang="en"><link data-rh="true" rel="alternate" href="https://livecontainer.github.io/it/docs/faq/compatibility" hreflang="it"><link data-rh="true" rel="alternate" href="https://livecontainer.github.io/zh-CN/docs/faq/compatibility" hreflang="zh-CN"><link data-rh="true" rel="alternate" href="https://livecontainer.github.io/docs/faq/compatibility" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"兼容性信息","item":"https://livecontainer.github.io/zh-CN/docs/faq/compatibility"}]}</script><link rel="stylesheet" href="/zh-CN/assets/css/styles.2b101777.css">
-<script src="/zh-CN/assets/js/runtime~main.8258c4ca.js" defer="defer"></script>
-<script src="/zh-CN/assets/js/main.1191c316.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.d3bcc58e.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/main.45bd3423.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -22,7 +22,7 @@
 <ol>
 <li class=""><strong>更新 LiveContainer</strong> 至最新稳定版或 Nightly</li>
 <li class="">确认应用是 <strong>私有</strong> 还是 <strong>共享</strong>，很多问题只在共享容器出现</li>
-<li class="">记录应用使用的是 <strong>JIT</strong> 还是 <strong>JIT-Less</strong>。先运行 <a class="" href="/zh-CN/docs/guides/jit-less-diagnose-page">JIT-Less 诊断</a> 以验证证书</li>
+<li class="">记录应用使用的是 <strong>JIT</strong> 还是 <strong>JIT-Less</strong>。先运行 <a class="" href="/zh-CN/docs/faq/jit-less-mode-setup">JIT-Less 设置与诊断</a> 以验证证书</li>
 <li class="">若启用了 Tweaks，请暂时关闭（长按应用 → 设置 → Tweak 文件夹 → <code>None</code>）排除冲突</li>
 <li class="">复现问题后立即进入 <strong>设置 → 数据管理 → 导出日志</strong>，在报告中附上 zip</li>
 <li class="">说明应用是否在 <strong>多任务</strong> 模式或另一个 LiveContainer 实例中运行</li>
