@@ -7,13 +7,13 @@ sidebar_position: 3
 
 LiveContainer provides a way to inject tweaks without injecting it to the app beforehand. Direct injection is still recommended as not all tweaks work correctly with LiveContainer's TweakLoader.
 
-LiveContainer comes with its own TweakLoader, which automatically load CydiaSubstrate and tweaks. TweakLoader is injected to every app you install. You can override TweakLoader.dylib symlink with your own implementation if you wish.
+LiveContainer comes with its own TweakLoader, which automatically load Ellekit and tweaks. TweakLoader is injected to every app you install. You can override TweakLoader.dylib symlink with your own implementation if you wish.
 
 ## How Loading Works
 
 When an app launches with TweakLoader enabled, LiveContainer loads items in this order:
 
-1. CydiaSubstrate
+1. CydiaSubstrate(Ellekit)
 2. Global tweaks from the root `Tweaks` folder
 3. Tweaks from the selected app-specific tweak folder (loaded recursively)
 
@@ -21,8 +21,6 @@ LiveContainer supports importing:
 
 1. `.dylib`
 2. `.framework`
-
-`TweakLoader.dylib` is skipped from tweak loading (it is the loader itself).
 
 ## Global vs App-Specific Tweaks
 
@@ -70,9 +68,7 @@ These options affect tweak behavior:
 1. `Don't Inject TweakLoader`: do not inject loader load commands during patch/sign.
 2. `Don't Load TweakLoader`: when available with the first option, also skip runtime loading.
 
-If both are enabled, no tweaks are loaded for that app.
-
-See also: [App Settings](./app-settings.md)
+If both are enabled, no tweak (including TweakLoader.dylib itself) is loaded for that app.
 
 ## Troubleshooting
 
@@ -84,3 +80,4 @@ Check whether global tweaks were added to the root `Tweaks` folder and are signe
 Check the framework bundle contains a valid `Info.plist` and `CFBundleExecutable`.
 4. A tweak still fails after setup:
 Test direct injection for that tweak, because compatibility can vary.
+5. Invalid Signature: You may need to manually re-sign your tweaks.

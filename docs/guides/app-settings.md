@@ -7,24 +7,22 @@ sidebar_position: 3
 
 Open app settings by holding an app card in LiveContainer and tapping `Settings`.
 
-This page documents current options in the app settings UI and clarifies differences from older docs.
-
 ## Data section
 
-- **Bundle path/id field**: shows the app's internal path identifier for troubleshooting.
-- **Remark**: custom note text for this app entry.
+- **Bundle Folder**: shows the app bundle's file name.
+- **Remark**: custom note text for this app.
 - **Tweak Folder**:
   - private app: selectable tweak folder
   - shared app: shown as read-only in this page
-- **Convert to Shared App**: moves app bundle/data/tweak context into shared flow for multi-LC usage.
-- **Convert to Private App**: moves shared app back to private flow.
+- **Convert to Shared App**: moves app bundle and its data/tweak into shared folder for Multiple LiveContainer usage.
+- **Convert to Private App**: moves shared app and its data/tweak back to private folder.
 
 ## Container section
 
 - **Container list**: open each container to manage container-level settings.
 - **New Data Folder**: create a new container data folder.
 - **Select External Storage**: add an external folder-backed container (shows warning for non-local/internal storage).
-- **Select Unused Container**: attach existing unused container folders (private flow only).
+- **Select Unused Container**: attach existing unused container folders (only shows for private apps).
 
 ### Container detail page
 
@@ -44,7 +42,7 @@ Inside each container page you can manage:
 ## Launch/JIT section
 
 - **Launch with JIT**: mark this app as JIT-required during launch.
-- **iOS 26+ script field** (when available): attach custom JIT launch script file for this app.
+- **JIT Launch Script** (iOS 26+): attach custom JIT launch script file for this app.
 
 ## Security section
 
@@ -62,9 +60,8 @@ Inside each container page you can manage:
 - **Fix Local Notification**
 - **Use LC Bundle ID**
 
-These are per-app compatibility toggles and should be changed one at a time when debugging.
-
-## Orientation section (phone builds)
+## Orientation section 
+If you encounter resolution issues with apps, especially landscape games, please try enabling this option
 
 - orientation lock: disabled / landscape / portrait
 
@@ -80,28 +77,14 @@ These are per-app compatibility toggles and should be changed one at a time when
 
 ## Legacy file-picker section
 
-- **Fix File Picker (legacy symlink mode)**: older compatibility path for file-import workflows.
+- **Fix File Picker (legacy)**: the old file picker fix. It forces the file selector to copy selected files to app's inbox. You may find and clean copied files in app container -> Inbox. Please note that this may cause crash or may not work when selecting folders.
 
 ## Signing section
 
 - **Force Sign**: force re-sign this app now.
-- disabled while app is running.
 - if app is currently marked as "don't sign", this action will prompt and re-enable signing first.
 
 ## Statistics section
 
-- last launched timestamp
-- installation date timestamp
-
-## Notes vs historical docs
-
-- Older docs referenced an app-level **Signer** picker; current builds moved signer control to global settings (`Default Signer`) rather than this page.
-- Some old options seen in legacy docs may no longer appear in current app settings UI.
-
-## Related
-
-- [Multiple Containers and External Data Folder](./containers-and-external-data.md)
-- [JIT Support](./jit-support.md)
-- [Tweaks](./tweaks.md)
-- [Multiple Instances](./multiple-livecontainers.md)
-- [Troubleshooting](../faq/common-issues.md)
+- last launched
+- installation date

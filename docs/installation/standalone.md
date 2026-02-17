@@ -5,37 +5,57 @@ sidebar_position: 1
 
 # Standalone LiveContainer
 
+Install this version if you don't need the built-in SideStore.
+
 ## Requirements
 
 - iOS/iPadOS 15+
    + Multitasking requires iOS/iPadOS 16.0+
-- AltStore 2.0+ / SideStore 0.6.0+
+- AltStore 2.2.1+ / SideStore 0.6.0+
 
 ## Downloads
-### Stable:
-<a href="https://celloserenity.github.io/altdirect/?url=https://raw.githubusercontent.com/LiveContainer/LiveContainer/refs/heads/main/apps.json&exclude=livecontainer" target="_blank">
-   <img src="https://github.com/CelloSerenity/altdirect/blob/main/assets/png/AltSource_Blue.png?raw=true" alt="Add AltSource" width="200" />
+<table>
+<tr>
+<td>
+Stable
+</td>
+<td>
+<a href="https://stikstore.app/altdirect/?url=https://github.com/LiveContainer/LiveContainer/releases/download/1.0/apps.json&exclude=livecontainer" target="_blank">
+   <img src="https://raw.githubusercontent.com/StikStore/altdirect/refs/heads/main/assets/png/AltSource_Blue.png" alt="Add AltSource" width="200"/>
 </a>
+</td>
+<td>
 <a href="https://github.com/LiveContainer/LiveContainer/releases/latest/download/LiveContainer.ipa" target="_blank">
-   <img src="https://github.com/CelloSerenity/altdirect/blob/main/assets/png/Download_Blue.png?raw=true" alt="Download .ipa" width="200" />
+   <img src="https://raw.githubusercontent.com/StikStore/altdirect/refs/heads/main/assets/png/Download_Blue.png" alt="Download .ipa" width="200"/>
 </a>
-
-### Nightly:
-<a href="https://celloserenity.github.io/altdirect/?url=https://github.com/LiveContainer/LiveContainer/releases/download/nightly/apps_nightly.json&exclude=livecontainer" target="_blank">
-   <img src="https://github.com/CelloSerenity/altdirect/blob/main/assets/png/AltSource_Blue.png?raw=true" alt="Add AltSource" width="200" />
+</td>
+</tr>
+<tr>
+<td>
+Nightly
+</td>
+<td>
+<a href="https://stikstore.app/altdirect/?url=https://github.com/LiveContainer/LiveContainer/releases/download/nightly/apps_nightly.json&exclude=livecontainer" target="_blank">
+   <img src="https://raw.githubusercontent.com/StikStore/altdirect/refs/heads/main/assets/png/AltSource_Blue.png" alt="Add AltSource" width="200"/>
 </a>
+</td>
+<td>
 <a href="https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa" target="_blank">
-   <img src="https://github.com/CelloSerenity/altdirect/blob/main/assets/png/Download_Blue.png?raw=true" alt="Download .ipa" width="200" />
+   <img src="https://raw.githubusercontent.com/StikStore/altdirect/refs/heads/main/assets/png/Download_Blue.png" alt="Download .ipa" width="200"/>
 </a>
+</td>
+</tr>
+</table>
 
 ## Installation
-- It is recommended to setup JIT-Less mode, in which LiveContainer signs your apps with your certificate from AltStore/SideStore (see the instructions below).
+Please use SideStore/AltStore to install LiveContainer. After installation, please setup JIT-Less mode, in which LiveContainer signs your apps with your certificate from AltStore/SideStore (see the instructions below).
 
-### JIT-Less mode (Without JIT \[recommended])
-These steps can be bypassed if you don't mind enabling JIT for your app every time, but it is not recommended. Without JIT, guest apps need to be codesigned, which requires retrieving the certificate and password from AltStore/SideStore.
+### JIT-Less mode
+To launch apps in LiveContainer, guest apps need to be codesigned, which requires retrieving the certificate and password from AltStore/SideStore.
 
 :::note
-JIT-Less mode does not mean you can't enable JIT for your apps. Instead, it means JIT is not required to launch an app. If you want to use JIT, see the instructions below in "JIT Support" section. 
+JIT-Less mode does not mean you can't enable JIT for your apps. Instead, it means JIT is not required to launch an app. If you want to use JIT, see JIT setup guide.
+ 
 If something goes wrong, please check "JIT-Less Mode Diagnose" for more information.
 :::
 
@@ -54,16 +74,3 @@ If you reinstall AltStore/SideStore using AltServer, you will need to go through
 - Open LiveContainer, tap the plus icon in the upper right hand corner and select IPA files to install.
 - Choose the app you want to open in the next launch.
 - You can long-press the app to manage it.
-
-### Next steps
-
-Once the basics work, explore the following guides:
-
-- [Installation Overview](/docs/installation) — compare installation paths and switch if your setup needs change.
-- [Sources](/docs/guides/sources) — add source feeds and install apps directly from source lists.
-- [Multiple LiveContainers](/docs/guides/multiple-livecontainers) — run additional containers and share apps between them.
-- [JIT Support](/docs/guides/jit-support) — configure automatic JIT enablers or scripts.
-- [JIT-Less Setup & Diagnose](/docs/faq/jit-less-mode-setup) — verify imported certificates and troubleshoot signing issues.
-- [Tweaks](/docs/guides/tweaks) — inject CydiaSubstrate tweaks globally or per app.
-- [Multitask](/docs/guides/multitask) — float guest apps in resizable windows.
-- [Lock & Hide Apps](/docs/guides/lock-app) — protect sensitive guests with Face ID or Strict Hiding mode.

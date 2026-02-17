@@ -55,9 +55,4 @@ Clears app icon cache for currently loaded app list.
 Use these tools when you need to inspect files manually or provide exact paths for debugging.
 
 - `Copy ... Path`: copies the full path for `App Group Container`, `Container`, or `LiveContainer Bundle` to clipboard.
-- `Open in Filza`: appears only when Filza is installed, and opens the selected location directly in Filza.
-
-## Related
-
-- [Container Management FAQ](../faq/container-management.md)
-- [Troubleshooting](../faq/common-issues.md)
+- `Open in Filza`: appears only when Filza is installed in LiveContainer, and opens the selected location directly in Filza.

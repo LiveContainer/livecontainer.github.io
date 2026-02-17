@@ -6,7 +6,7 @@ title: 应用设置
 
 安装应用后，长按 LiveContainer 中的应用图标即可打开「设置」，自定义该应用的行为及与 LiveContainer 的交互方式。
 
-## 数据（DATA）
+## 数据
 
 ### 共享应用
 
