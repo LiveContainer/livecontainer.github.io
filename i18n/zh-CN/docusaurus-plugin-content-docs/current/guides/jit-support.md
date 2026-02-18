@@ -1,59 +1,45 @@
 ---
 title: JIT 支持
+sidebar_position: 2
 ---
 
 # JIT 支持
 
-LiveContainer 能与多种 JIT 启用器协同工作，可在 iOS 17.4–18.x 以及最新的 iOS 26+ 测试版上运行未签名二进制。所有设置均位于 **设置 → JIT**。
+LiveContainer 支持多个常见 JIT 启用器。请在 `设置 -> JIT` 中进行配置。
 
-## 标记需要 JIT 的应用
+## 选择JIT启用器
+:::note
+仅StikDebug/StikDebug(Another LiveContainer)支持iOS 26+。 
+:::
 
-1. 长按应用 → **设置** → 开启 **使用 JIT 启动**
-2. 打开 LiveContainer，但暂时不要触发 JIT
-3. 设置下文的任意启用器
-4. 确认启用器的前置条件已满足（VPN、配对电脑等）
-5. 点击 **运行**。LiveContainer 会进入「等待 JIT」状态，直到启用器回复
-6. 如果启用器无法自动附加，请在提示框存在期间切到启用器手动触发
+对于 *StikDebug*, 选择 "StikDebug". 
 
-## 内置启用器
+对于 *安装在LiveContainer中的StikDebug*, 选择 "StikDebug(Another LiveContainer)". 
 
-### StikDebug（原 StikJIT，推荐）
+对于 *SideStore*, 选择SideStore。 请注意由于SideStore的JIT URL还未实装，你需要手动在SideStore中对当前LiveContainer启用JIT。 此方法不支持内置SideStore。
 
-[StikDebug](https://apps.apple.com/us/app/stikdebug/id6744045754) 是 iOS 17.4+ 和 iOS 26+ 脚本流程里最顺畅的解决方案。
+对于 *JitStreamer-EB* (已弃用), 选择 JitStreamer-EB。 如果你通过Wireguard VPN连接JitStreamer-EB服务器，且你未修改`WIREGUARD_SERVER_ADDRESS`，请将“地址”栏留空，否则请在“地址”栏输入你的服务器地址，包括(http/https)和端口(9172)。
 
-1. 安装 StikDebug 并导入 AltStore/SideStore/AltServer 生成的配对文件
-2. 在应用设置中启用 **使用 JIT 启动**
-3. 进入 **设置 → JIT 启用器**，选择 **StikDebug**。若要使用 iOS 26+ 自动化脚本，可在该界面粘贴脚本
-4. 启动应用。LiveContainer 会尝试自动请求 StikDebug。若失败，请在提示框仍在时切换到 StikDebug 并点击「Enable JIT for LiveContainer」
+对于 *SideJITServer/JITStreamer 2.0*, 请输入服务器地址和你的设备的UDID。
 
-### SideStore（0.6.2+）
+## 配置App
+长按App->设置->启用“带JIT启动”，将App标记为需要JIT。LiveContainer将等待启用JIT，并尝试联系您配置的JIT启用器。
 
-SideStore 提供 JIT API，LiveContainer 可以调用。但由于 URL Scheme 暂时不会自动跳回，需要手动完成流程：
+如果你使用的是iOS 26+，并且你的设备使用A15+或M2+（含），你还需要为每个App提供一个JIT脚本。请联系App开发者。您可以通过以下方式加载脚本：长按App->设置->选择JIT启动脚本。
 
-1. 在设置中选择 **SideStore** 作为启用器
-2. 出现「等待 JIT」后切到 SideStore → **My Apps**
-3. 确保 SideStore VPN 已连接（或用飞行模式+Wi-Fi 的方式）
-4. 长按 LiveContainer → **Enable JIT**，SideStore 成功后再返回 LiveContainer
+## 安装StikDebug（另一个LiveContainer）
+StikDebug可以在LiveContainer中安装和使用。应提供除当前LiveContainer之外的空闲LiveContainer来启动StikDebug
+- 下载StikDebug ipa并将其安装在LiveContainer中
+- 正常配置StikDebug（导入配对文件等）
+- 将StikDebug转换为共享App
+- 确保有除当前LiveContainer之外的空闲LiveContainer可用
+- 连接到LocalDevVPN
+- 点击“运行”
+- StikDebug将在另一个LiveContainer中启动，并且所请求的应用程序应在启用JIT的情况下启动
 
-### SideJITServer
-
-[SideJITServer](https://github.com/nythepegasus/SideJITServer) 允许你自建配对服务。
-
-1. 部署 SideJITServer，并记录 HTTP 地址与设备 UDID
-2. 在 LiveContainer 的 **设置 → JIT 启用器 → SideJITServer** 中填入地址与 UDID
-3. 启动应用，LiveContainer 会自动访问你的服务器
-
-### AltStore/AltServer 脚本
-
-最新版本提供脚本输入框，可粘贴 AltStore/AltServer 社区分享的自动化脚本（包含 iOS 26+ 版本）。这些脚本通常要求设备和 AltServer 处在同一网络。
-
-1. 从 AltStore Discord 或 Wiki 复制脚本
-2. 粘贴到 JIT 设置中的脚本字段
-3. 运行标记为「使用 JIT 启动」的应用。LiveContainer 会执行脚本并在提示框中显示输出
-
-## 故障排查
-
-- 先使用 **JIT-Less 诊断页面**（设置 → JIT-Less Mode Diagnose）确认证书和钥匙串状态
-- 如果提示框立刻关闭，检查启用器是否已在设置中选中，LiveContainer 是否有权限打开其 URL Scheme
-- 通过 **设置 → 数据管理 → 导出日志** 收集日志并附加到 Issue
-- 多任务窗口需要支持按 PID 附加的启用器（如 StikDebug）。SideStore 的手动启用无法满足此需求
+## 在LiveContainer中为应用程序启用JIT的正确方法
+0. 先不要为LiveContainer启用JIT
+1. 如上所述设置JIT启用程序
+2. 如上所述启用“JIT启动”
+3. 点击运行
+4. 如果您的JIT启用程序不支持自动启用，您需要从JIT启用程序为LiveContainer启用JIT，同时保持“等待JIT”提示打开。

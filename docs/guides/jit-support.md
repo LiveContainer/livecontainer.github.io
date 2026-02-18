@@ -5,89 +5,41 @@ sidebar_position: 2
 
 # JIT Support
 
-LiveContainer integrates with multiple JIT enablers. Configure them in `Settings -> JIT`.
+LiveContainer has built-in support for popular JIT enablers. You can set it up in LiveContainer settings -> JIT section.
 
-## Correct launch sequence (important)
-
-Use this order to avoid false failures:
-
-1. Do **not** manually enable JIT for LiveContainer first.
-2. Configure your JIT enabler in settings.
-3. Mark target app with `Launch with JIT`.
-4. Tap `Run` and keep the waiting dialog visible.
-5. If your enabler is manual, trigger JIT from the enabler while the waiting dialog is still open.
-
-## Enable JIT for an app
-
-1. Hold app -> `Settings` -> enable `Launch with JIT`.
-2. Configure one enabler below.
-3. Launch app. LiveContainer enters a waiting state until JIT is attached.
-4. If your enabler is manual, trigger JIT while waiting prompt is still open.
-
-## Enabler matrix
-
-- **StikDebug**: best default for most users.
-- **StikDebug (Another LiveContainer)**: runs JIT flow through another LC instance.
-- **SideStore**: good if you already use SideStore flow.
-- **SideJITServer / JITStreamer 2.0**: for self-hosted server workflows.
-- **JITStreamer-EB (Relaunch)**: browser/relaunch-based workflow.
-
-## StikDebug (recommended)
-
+## Select a JIT Enabler
 :::note
-StikDebug support has existed since older 3.3.51+ era builds and remains the recommended path in current builds.
+Only StikDebug/StikDebug(Another LiveContainer) works for iOS 26+. 
 :::
 
-1. Install StikDebug and import pairing file.
-2. Choose `StikDebug` in LiveContainer JIT settings.
-3. Launch app and let LiveContainer request attach.
+For *StikDebug*, Choose "StikDebug". 
 
-If automatic attach fails, open StikDebug manually and trigger JIT while waiting dialog is visible.
+For *StikDebug in LiveContainer*, Choose "StikDebug(Another LiveContainer)". 
 
-## StikDebug (Another LiveContainer)
+For *SideStore*, choose SideStore as your JIT enabler. Please note that since SideStore's JIT URL Scheme is not implemented yet, you still need to manually enable JIT for current LiveContainer in SideStore. Built-in SideStore is not supported.
 
-This mode requires an available secondary LiveContainer instance.
+For *JitStreamer-EB* (Deprecated), choose JitStreamer-EB as your JIT enabler. If you use JitStreamer through a Wireguard VPN and you use the official server or you self-host and did not changed the `WIREGUARD_SERVER_ADDRESS` variable, you can leave "Address" blank. Otherwise, put the address to your server in "Address", including scheme (http/https) and port (9172).
 
-If you see no available target instance:
+For *SideJITServer/JITStreamer 2.0*, please input both your address and device UDID.
 
-- install another LiveContainer instance
-- close running instances using needed container
-- or switch to another enabler
+## Setup App
+Mark an app as JIT needed by going to: hold app -> settings -> enable Launch with JIT. LiveContainer will wait for JIT to be enabled and try to contact the JIT enabler you configured.
 
-## SideStore
+If you are on iOS 26+ and your device uses A15+ or M2+ (included), you'll also need a JIT script for each app. Please contact app developer for that. You may load the script by: hold app -> settings -> select JIT launch Script.
 
-1. Select `SideStore` enabler.
-2. Launch app, wait for prompt.
-3. Switch to SideStore and enable JIT for LiveContainer.
-4. Return to LiveContainer.
+## Setup StikDebug (Another LiveContainer)
+StikDebug can be installed and used in LiveContainer. A free LiveContainer other than current one should be available to launch StikDebug
+- Download StikDebug ipa and install it in LiveContainer
+- Setup StikDebug as usual (import pairing file etc.)
+- Convert StikDebug into a shared app
+- Make sure a free LiveContainer other than current one is available
+- Connect to LocalDevVPN
+- Tap "Run"
+- StikDebug will be launched in another LiveContainer, and the requested app should be launched with JIT enabled
 
-Note: SideStore URL flow may not always return to LiveContainer automatically on all setups, so manual app switching is expected.
-
-## SideJITServer / JITStreamer 2.0
-
-1. Enter server address and device UDID in JIT settings.
-2. Launch app.
-3. LiveContainer contacts server endpoint automatically.
-
-## JITStreamer-EB (Relaunch)
-
-Use when your workflow depends on browser-based relaunch behavior.
-
-## Common failures
-
-### "Waiting for JIT" never completes
-
-- verify selected enabler
-- verify enabler app/server is reachable
-- keep waiting prompt open while triggering manual flow
-- if SideStore path is used, confirm VPN/connectivity prerequisites before triggering
-
-### Works in normal launch, fails in multitask
-
-Use an enabler that supports PID-based attach.
-
-## Related
-
-- [Multiple LiveContainers](./multiple-livecontainers.md)
-- [JIT-Less Setup & Diagnose](../faq/jit-less-mode-setup.md)
-- [Troubleshooting](../faq/common-issues.md)
+## The correct way to enable JIT for an app inside LiveContainer
+0. Don't enable JIT for LiveContainer now
+1. Set up your JIT enabler as said above
+2. Enable "Launch with JIT" as said above
+3. Tap run
+4. If your JIT enabler doesn't support automatic enabling, you need to enable JIT for LiveContainer from your JIT enabler while keeping the "waiting for JIT" prompt open.
