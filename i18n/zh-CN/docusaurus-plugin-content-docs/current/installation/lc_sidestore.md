@@ -7,16 +7,11 @@ sidebar_position: 2
 
 该版本将 SideStore 内置到 LiveContainer 中，可以在免费开发者账号场景下更节省签名槽位。
 
-你可以通过 [Impactor](https://github.com/khcrysalis/Impactor)（推荐）、[iloader](https://github.com/nab138/iloader) 或已有的独立 [SideStore](https://sidestore.io) 进行安装。
+你可以通过 [Impactor](https://github.com/khcrysalis/Impactor)、[iloader](https://github.com/nab138/iloader) 或已有的独立 [SideStore](https://sidestore.io) 进行安装。
 
-## 适用场景
-
-- 你使用免费开发者账号，并希望尽量节省可用槽位。
-- 你能接受比独立版稍复杂的安装流程。
-- 你希望 LiveContainer 与 SideStore 使用一体化方案。
 
 :::note
-如果你在 Windows 上安装 LiveContainer + SideStore，需要先安装 [iTunes](https://support.apple.com/en-us/106372)，以便侧载工具使用与 Apple 设备通信所需驱动。  
+如果你在 Windows 上安装 LiveContainer + SideStore，需要先安装 [iTunes](https://support.apple.com/en-us/106372)，以便安装自签工具使用与 Apple 设备通信所需驱动。  
 开始前请先连接设备并在设备上选择“信任此电脑”。
 :::
 
@@ -27,7 +22,8 @@ sidebar_position: 2
 |<a href="https://github.com/LiveContainer/LiveContainer/releases/latest/download/LiveContainer+SideStore.ipa" target="_blank"><img src="https://github.com/CelloSerenity/altdirect/blob/main/assets/png/Download_Blue.png?raw=true" alt="下载 .ipa" width="200" /></a>|<a href="https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer+SideStore.ipa" target="_blank"><img src="https://github.com/CelloSerenity/altdirect/blob/main/assets/png/Download_Blue.png?raw=true" alt="下载 .ipa" width="200" /></a>|
 
 ## 方法 1：Impactor
-[Impactor](https://github.com/khcrysalis/Impactor)（原名 Plume Impactor）是由 [khcrysalis](https://github.com/khcrysali) 开发的跨平台现代侧载工具。推荐优先使用该工具，因为它能更完整处理 LiveContainer 所需权限。
+[Impactor](https://github.com/khcrysalis/Impactor)（原名 Plume Impactor）是由 [khcrysalis](https://github.com/khcrysali) 开发的跨平台现代侧载工具。Impactor会自动添加increased-memory-limit与HealthKit有关权限给LiveContainer。
+
 
 1. 根据你的系统与架构，从 [GitHub](https://github.com/khcrysalis/Impactor/releases/latest) 下载对应版本。请下载 “Impactor”，不是 “plumesign”。
 2. 安装并打开 Impactor。
@@ -48,7 +44,7 @@ sidebar_position: 2
 
 ## 方法 2：iloader
 :::note
-在当前阶段，iloader 不能正确处理 LiveContainer 所需的部分权限（如 keychain access groups），因此钥匙串隔离/多容器能力可能无法正常工作。
+请确保使用最新的iloader。老版本的iloader无法正确签名LiveContainer
 :::
 
 [iloader](https://github.com/nab138/iloader) 是由 [nab138](https://github.com/nab138) 开发的跨平台现代侧载工具。
@@ -56,7 +52,6 @@ sidebar_position: 2
 你可以参考 [SideStore 官方安装文档](https://docs.sidestore.io/docs/installation/install) 安装 LiveContainer + SideStore；在选择要侧载的应用时，将 “SideStore” 改为 “LiveContainer+SideStore”。
 
 安装后，请前往 [安装后设置](#安装后设置) 完成后续流程。  
-另外，你也可以在内置 SideStore 中重新安装 LiveContainer + SideStore IPA，以修正权限问题。
 
 ## 方法 3：从独立 SideStore 迁移
 你也可以从“独立 LiveContainer + 独立 SideStore”迁移到 “LiveContainer + SideStore” 一体版，这样可为其他应用或额外 LiveContainer 节省一个免费槽位。
@@ -84,9 +79,3 @@ sidebar_position: 2
 
 ## 自动刷新快捷指令
 自动刷新快捷指令的用法与独立 SideStore 基本一致，只需将原来 SideStore 的 “Refresh All Apps” 动作替换为 LiveContainer 的对应动作。
-
-## 下一步
-
-- [安装总览](../installation.md) — 对比路径差异并评估迁移方案。
-- [JIT 支持](../guides/jit-support.md) — 安装后配置 JIT 启用方式。
-- [JIT-Less 设置与诊断](../faq/jit-less-mode-setup.md) — 校验证书导入和签名状态。

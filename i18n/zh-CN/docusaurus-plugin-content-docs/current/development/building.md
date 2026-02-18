@@ -32,13 +32,3 @@ git submodule update --init --recursive
 2. 选择 `LiveContainer` Scheme
 3. 选择目标真机设备（LiveContainer 必须在真机运行）
 4. 点击 **Run**
-
-在编译主 Target 时，LiveProcess、MultitaskSupport Extension 以及 Tweak 帮助模块会作为依赖自动构建。
-
-## 5. 可选组件
-
-- **TestJITLess**：用于验证 JIT-Less 签名流程的调试工具。
-- **TweakLoader**：如果需要修改 Tweak 注入逻辑，可以单独构建/归档并替换随附的 dylib。
-- **SideStore Helpers**：测试 JIT 自动化时，请确保 `SideStore` Target 也能正确签名。
-
-应用安装到设备后，记得参考[安装指南](../installation.md)导入证书并启用 JIT-Less、JIT 等功能。

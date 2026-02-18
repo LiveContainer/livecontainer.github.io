@@ -1,11 +1,23 @@
 ---
-title: Multiple Containers and External Data Folder
+title: Multiple / External Containers
 sidebar_position: 4
 ---
 
-# Multiple Containers and External Data Folder
+# Multiple / External Containers
+:::note
+You can create up to 128 containers per app after 3.2.58 and 3 before. You can run the same app with different Container in all LiveContainers at the same time.
+:::
+:::note
+Most apps do not support containers on external storage and are very likely to crash.
 
-By using multiple containers within a single application, you can maintain entirely separate, isolated data sets and bind external folders directly as container storage. This functionality allows you to manage multiple accounts simultaneously without the friction of repeated logins and provides the flexibility to start with a fresh application state while keeping all your existing data intact.
+If this external folder later becomes unavailable, this container will also become unavailable until access is restored.
+:::
+
+By using multiple containers within a single application, you can maintain entirely separate, isolated data for one app.
+
+By using external containers, you can save app's data outside LiveContainer, which is useful if you:
+- wish to manage the app's files in a file manager while using the app in LiveContainer
+- maintain access to the container even if the app is shared
 
 ## Open container settings
 
@@ -15,7 +27,7 @@ By using multiple containers within a single application, you can maintain entir
 
 ## Create multiple containers for one app
 
-### Create a new local container
+### Create a new container
 
 1. Tap `New Data Folder`.
 2. Enter a display name.
@@ -40,15 +52,9 @@ This is the container the app uses by default when you tap `Run`.
 
 ## Add an external data folder
 
-1. In app settings, tap `Select External Storage`.
+1. In app settings, tap `Select External Data Folder`.
 2. Pick a folder in the system file picker.
-3. LiveContainer creates a bookmark and binds this folder as a container.
-
-:::note
-Most apps do not support containers on external storage and are very likely to crash.
-
-If this external folder later becomes unavailable, this container can become partially unavailable until access is restored.
-:::
+3. LiveContainer binds this folder as a container.
 
 ## Container operations
 
@@ -56,23 +62,16 @@ Open a container detail page to manage it.
 
 - `Container Name`: only changes the name shown in LiveContainer UI. It does not rename the actual container folder.
 - `Container Folder Name`: shows the real folder identifier for this container. Use this value to confirm exact paths or troubleshoot data location. This field is read-only in app settings.
-- `Isolate App Group`: routes app-group container paths for the guest app to this container's isolated location instead of the shared app-group path. This helps reduce cross-container data mixing for app-group-based data.
+- `Isolate App Group`: routes app-group container paths for the guest app to this container's isolated location instead of the shared app-group path.
 - `Spoof Identifier For Vendor`: generates and stores a persistent spoofed `identifierForVendor` for this container. This helps separate app identity state between containers for apps that rely on `identifierForVendor`.
 - `Set Default Container`: makes this container the default one used when you tap `Run`.
 - `Open Data Folder`: opens this container's data folder for manual file import, export, or inspection.
 - `Unbind`: removes this container from the app's container list, but keeps container files on disk.
-- `Delete Data`: removes files inside this container but keeps the container entry and `LCContainerInfo.plist`.
+- `Delete Data`: removes files inside this container but keeps the container`.
 - `Clean Keychain`: removes keychain data associated with this container.
-- `Remove Container`: removes the container entry and deletes the container folder.
+- `Remove Container`: removes the container and deletes the container folder.
 
 ## Limits and behavior
 
 - Maximum containers per app: `128` (limited by keychain group pool).
 - If a container is currently in use by a running LiveContainer instance, destructive operations are blocked.
-- Shared/private app conversion may move data paths. Re-check container selection after conversion.
-
-## Related
-
-- [App Settings](./app-settings.md)
-- [Data Management](./data-management.md)
-- [Multiple LiveContainers](./multiple-livecontainers.md)

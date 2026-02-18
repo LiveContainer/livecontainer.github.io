@@ -1,85 +1,83 @@
 ---
-title: 插件（Tweaks）
+title: 模块
+sidebar_position: 3
 ---
 
 # 使用插件
 
-LiveContainer 支持在不修改 IPA 的情况下注入插件。由于并非所有插件都能与 TweakLoader 完全兼容，若条件允许依旧建议直接对应用进行注入。
+LiveContainer 提供了一种无需事先将模块注入应用即可使用的方法。仍然建议直接注入,因为并非所有插件都能正确使用 LiveContainer 的 TweakLoader。
 
-LiveContainer 自带的 TweakLoader 会自动加载 CydiaSubstrate 与插件，并在你安装的每个应用中注入。如有需要，可以替换 `TweakLoader.dylib` 符号链接来自定义实现。
+LiveContainer 附带自己的 TweakLoader,它会自动加载 Ellekit 和模块。TweakLoader 被注入到您安装的每个应用中。如果您愿意,可以用自己的实现覆盖 TweakLoader.dylib 符号链接。
 
-## 加载机制
+## 加载工作原理
 
-当应用启用 TweakLoader 启动时，LiveContainer 的加载顺序为：
+当应用在启用 TweakLoader 的情况下启动时,LiveContainer 按以下顺序加载项目:
 
-1. 先加载 CydiaSubstrate
-2. 再加载 `Tweaks` 根目录中的全局插件
-3. 最后加载该应用选定的插件文件夹（递归加载）
+1. CydiaSubstrate(Ellekit)
+2. 根 `Tweaks` 文件夹中的全局插件
+3. 所选应用特定插件文件夹中的插件(递归加载)
 
-当前导入器支持：
+LiveContainer 支持导入:
 
 1. `.dylib`
 2. `.framework`
 
-`TweakLoader.dylib` 本身不会作为插件再次加载。
+## 全局插件与应用特定插件
 
-## 全局插件与应用专属插件
-
-| 类型 | 存放位置 | 生效范围 |
+| 类型 | 文件放置位置 | 范围 |
 | --- | --- | --- |
-| 全局插件 | `Tweaks` 根目录 | 对所有应用生效 |
-| 应用专属插件 | `Tweaks` 下的子文件夹 | 仅对选择该文件夹的应用生效 |
+| 全局插件 | 根 `Tweaks` 文件夹 | 为所有应用加载 |
+| 应用特定插件 | `Tweaks` 下的子文件夹 | 仅为选择该文件夹的应用加载 |
 
 :::note
-插件管理仅限主 LiveContainer（蓝色）以及私有应用使用。如果想在共享应用中启用插件，请先将应用转换为私有，添加插件后再改回共享，插件依旧有效。
+管理插件仅在主 LiveContainer(蓝色)和私有应用中可用。如果您想为共享应用加载插件,请在向其添加插件之前将其转换为私有应用。完成后,您可以将其转换回来,插件仍然可以工作。
 :::
 
-为应用分配专属插件文件夹：
+要分配应用特定文件夹:
 
-1. 打开 `Tweaks` 标签页。
-2. 新建一个文件夹。
-3. 在该文件夹中导入插件。
-4. 打开应用设置，将 `Tweak Folder` 设为该文件夹。
+1. 打开 `模块` 选项卡。
+2. 创建新文件夹。
+3. 将插件导入该文件夹。
+4. 打开应用设置并将 `模块文件夹` 设置为该文件夹。
 
-对于共享应用，`Tweak Folder` 在应用设置中是只读。需要时可先转为私有应用，配置后再转回共享。
+对于共享应用,`模块文件夹` 在应用设置中是只读的。如果需要,请将应用切换到私有模式,配置插件文件夹,然后切换回来。
 
 ## 管理插件
 
-1. 导入：`Tweaks` -> `+` -> `Import Tweak`
-2. 新建文件夹：`Tweaks` -> `+` -> `New Folder`
-3. 重命名：长按条目 -> `Rename`
-4. 删除：条目左滑 -> `Delete`
+1. 导入:`模块` 选项卡 -> `+` -> `导入模块`
+2. 新文件夹:`模块` 选项卡 -> `+` -> `新建文件夹`
+3. 重命名:长按项目 -> `重命名`
+4. 删除:向左滑动项目 -> `删除`
 
-## 关于插件签名
+## 插件签名
 
-插件需要签名后才能稳定加载。
+插件必须先签名才能成功加载。
 
-LiveContainer 会在应用启动前自动处理签名：
+LiveContainer 在应用启动前自动处理此操作:
 
-1. 检查插件文件与 `TweakInfo.plist` 记录。
-2. 当文件变化或签名失效/过期时自动重签。
-3. 重签后更新 `TweakInfo.plist`。
+1. 它检查插件文件和现有的 `TweakInfo.plist` 记录。
+2. 当文件更改或签名无效/过期时,它会重新签名。
+3. 签名后它会更新 `TweakInfo.plist`。
 
-你也可以在 `Tweaks` 页面点击 `Sign` 手动强制重签。
+您还可以使用 `Tweaks` 选项卡中的 `Sign` 按钮手动强制重新签名。
 
 ## 相关应用设置
 
-以下设置会直接影响插件加载：
+这些选项会影响插件行为:
 
-1. `Don't Inject TweakLoader`：打补丁/签名时不注入 TweakLoader 加载命令。
-2. `Don't Load TweakLoader`：与上一个选项配合时，运行时也不再主动加载 TweakLoader。
+1. `不注入TweakLoader`: 在修补/签名期间不注入加载器加载命令。
+2. `不加载TweakLoader`: 当第一个选项可用时,也跳过运行时加载。
 
-两个选项都开启时，该应用不会加载任何插件。
+如果两者都启用,则不会为该应用加载任何插件(包括 TweakLoader.dylib 本身)。
 
-另请参阅：[App Settings](./app-settings.md)
+## 故障排除
 
-## 故障排查
-
-1. 某个应用不生效：
-先检查该应用的 `Tweak Folder` 是否正确，且应用设置里没有禁用 TweakLoader。
-2. 所有应用都不生效：
-检查插件是否放在 `Tweaks` 根目录并且已签名。
-3. Framework 插件加载失败：
-检查该 framework 是否包含有效的 `Info.plist` 和 `CFBundleExecutable`。
-4. 按流程仍失败：
-该插件可能与 TweakLoader 兼容性不足，建议尝试直接注入。
+1. 插件未应用于一个应用:
+检查应用的 `Tweak Folder` 是否设置正确,以及应用设置中是否未禁用 TweakLoader。
+2. 插件未应用于任何应用:
+检查全局插件是否已添加到根 `Tweaks` 文件夹并已签名。
+3. Framework 插件加载失败:
+检查 framework bundle 是否包含有效的 `Info.plist` 和 `CFBundleExecutable`。
+4. 设置后插件仍然失败:
+测试该插件的直接注入,因为兼容性可能有所不同。
+5. Invalid Signature: 您可能需要手动重新签名您的插件。

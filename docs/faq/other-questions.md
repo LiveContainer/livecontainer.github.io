@@ -14,8 +14,7 @@ LiveContainer is designed to somewhat bypass the 3 app limit set on free develop
 ## 8.3. UI Beautifying / Customization Features
 Requests for features like home page customization, changing app names/icons, and other visual adjustments are low priority since they are not quite useful and can potentially slow down app launch times. You can simply create a shortcut in your home screen and change how they are ordered and their name / icon.
 
-## 8.4. Upcoming Features
-The following features are likely to be added to LiveContainer.
-- Install app from URL & app install URL (eta 3.3.0)
-- 3+ containers for each app (eta when SideStore 0.6.0 release)
-- ADP certificate support (eta when I get an ADP certificate for free)
+## 8.4. About Games
+Game crashes are among the most difficult to fix because games are often built with engines written in languages other than C, C++, Objective-C, or Swift. This makes it harder for us to identify the root cause. Therefore, please keep expectations low regarding fixes for game-related issues.
+
+Additionally, we do not provide support for game cheating, cracking, or hack clients. Any issue about game cheating will be immediately closed. Please use the official game client or other sideloading methods.

@@ -5,10 +5,6 @@ sidebar_position: 4
 
 # Data Management
 
-:::warning
-Some actions are destructive. Back up important app/container data first.
-:::
-
 ## Clean unused data folders
 
 :::note

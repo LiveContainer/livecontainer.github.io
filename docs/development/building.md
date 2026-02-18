@@ -33,13 +33,3 @@ Open `xcconfigs/Global.xcconfig`, set `DEVELOPMENT_TEAM[config=Debug]` (and Rele
 2. Select the `LiveContainer` scheme.
 3. Choose your target device (LiveContainer must run on-device).
 4. Press **Run**.
-
-LiveProcess, MultitaskSupport extensions, and tweak helper targets are automatically built as dependencies when the main target compiles.
-
-## 5. Optional components
-
-- **TestJITLess**: contains utilities for validating JIT-less signing workflows.
-- **TweakLoader**: if you modify tweak loading, build/archive this target and replace the bundled dylib.
-- **SideStore helpers**: ensure the `SideStore` target also signs correctly if you are testing JIT automation.
-
-After the app installs on-device, follow the [Installation guide](../installation.md) to import certificates and enable features such as JIT-less mode.

@@ -33,7 +33,7 @@ In Multiple LiveContainer view:
 ## About App Dispatching
 Depending on how you launch your app, LiveContainer dispatches your apps differently:
 
-- When using url scheme or WebClips, the first LiveContainer (blue icon) always launches by default. If the requested app is running in other LiveContainer, it will be switched to. If not, LiveContainer will try to switch to a free LiveContainer and switch to it.
+- When using url scheme or AppClips, the first LiveContainer (blue icon) always launches by default. If the requested app is running in other LiveContainer, it will be switched to. If not, LiveContainer will try to switch to a free LiveContainer and switch to it.
 - When using the Launch App Shortcut, the dispatch process happens in the background and only the selected free LiveContainer will be opened.
 
 If all LiveContainers are in use, you'll be prompted to either open it in the second/third LiveContainer (gray icon) or terminate the current app and relaunch it in the first.

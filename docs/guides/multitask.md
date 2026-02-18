@@ -23,6 +23,7 @@ If extensions are missing, multitask launch can fail with a `LiveProcess extensi
 You can also enable `Auto Launch in Multitask Mode` in settings, then the main `Run` button launches that app directly in multitask mode.
 
 ## Multitask modes
+(Available in iPad OS 16.1+)
 
 In `Settings -> Multitask`, current builds provide two modes:
 
@@ -57,5 +58,5 @@ When `Multitask Mode` is set to `Virtual Window`, the following options appear:
 
 If `Launch with JIT` is enabled for an app, multitask launch will first go through JIT acquisition, then continue into the multitask window.
 
-For best stability, use a JIT enabler that supports PID-based attach flow (for example, StikDebug).  
+For best stability, use a JIT enabler that supports PID attach (for example, StikDebug).  
 This is the recommended path for multitask + JIT.

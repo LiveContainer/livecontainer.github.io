@@ -49,13 +49,15 @@ const sidebars = {
     {
       type: 'category',
       label: 'FAQ',
+      link: {
+        type: 'doc',
+        id: 'faq',
+      },
       items: [
-        'faq/common-issues',
-        'faq/compatibility',
         'faq/installing-livecontainer',
         'faq/jit-less-mode-setup',
         'faq/app-crashes',
-        'faq/container-management',
+        'faq/using-guest-apps',
         'faq/other-questions',
       ],
     },

@@ -20,31 +20,16 @@ Open app settings by holding an app card in LiveContainer and tapping `Settings`
 ## Container section
 
 - **Container list**: open each container to manage container-level settings.
-- **New Data Folder**: create a new container data folder.
-- **Select External Storage**: add an external folder-backed container (shows warning for non-local/internal storage).
 - **Select Unused Container**: attach existing unused container folders (only shows for private apps).
 
-### Container detail page
-
-Inside each container page you can manage:
-
-- container name
-- `Isolate App Group`
-- `Spoof Identifier For Vendor`
-- `Container Preferences` (if guest app provides `Settings.bundle`)
-- set as default container
-- open data folder
-- unbind container
-- delete container data
-- clean this container's keychain data
-- remove container entry
+Please refer to [Multiple / External Containers](./containers-and-external-data.md) for more information.
 
 ## Launch/JIT section
 
 - **Launch with JIT**: mark this app as JIT-required during launch.
 - **JIT Launch Script** (iOS 26+): attach custom JIT launch script file for this app.
 
-## Security section
+## Privacy section
 
 - **Lock App**: require authentication before launch.
 - **Hide App**: available when app is locked; hides app from normal list.
@@ -56,9 +41,9 @@ Inside each container page you can manage:
 
 ## Fixes section
 
-- **Fix File Picker (new)**
+- **Fix File Picker**
 - **Fix Local Notification**
-- **Use LC Bundle ID**
+- **Use LiveContainer's Bundle ID**
 
 ## Orientation section 
 If you encounter resolution issues with apps, especially landscape games, please try enabling this option
@@ -66,6 +51,7 @@ If you encounter resolution issues with apps, especially landscape games, please
 - orientation lock: disabled / landscape / portrait
 
 ## Runtime compatibility section
+May help bypass some app's injection check
 
 - **Hide LiveContainer from Dyld API**
 - **Don't Inject TweakLoader**
@@ -73,7 +59,7 @@ If you encounter resolution issues with apps, especially landscape games, please
 
 ## SDK behavior section
 
-- **Spoof SDK Version**: make system-library behavior follow target SDK assumptions.
+- **Spoof SDK Version**: make system-library behavior match the app's SDK version.
 
 ## Legacy file-picker section
 

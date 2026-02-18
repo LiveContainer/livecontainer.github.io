@@ -5,12 +5,12 @@ sidebar_position: 2
 
 # Sources
 
-The `Sources` tab lets you browse AltStore-style source feeds and install apps directly from those feeds.
+The `Sources` tab lets you browse AltStore-style source and install apps directly from them.
 
 ## Add a source
 
-1. Tap `Add Source` (`+`).
-2. Enter a source URL in the manage sheet.
+1. Tap (`+`) to add a source.
+2. Enter a source URL.
 3. Confirm add.
 
 ## Deep link support
