@@ -16,7 +16,7 @@ From there you can prepare and install instances such as `LiveContainer2` / `Liv
 ## Installation
 Tap "LiveContainer2" / "LiveContainer3" to (re)install another LiveContainer. LiveContainer will generate an ipa of another LiveContainer. Please open the generated LiveContainer ipa in AltStore/SideStore install them, or you may save and customize it. 
 
-In case you need Game Mode, you can enable "Set Catagory as Game" and "Allow Game Mode" before installing another LiveContainer
+In case you need Game Mode, you can enable "Set Category as Game" and "Allow Game Mode" before installing another LiveContainer
 
 ## Verify installation status
 
