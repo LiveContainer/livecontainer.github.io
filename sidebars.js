@@ -36,6 +36,7 @@ const sidebars = {
         'guides/multiple-livecontainers',
         'guides/multitask',
         'guides/lock-app',
+        'guides/refresh-verification'
       ],
     },
     {

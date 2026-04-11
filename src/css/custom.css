@@ -28,3 +28,8 @@
   --ifm-color-primary-lightest: #8cadff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+.img-scroll {
+  overflow-x: auto;
+  white-space: nowrap;
+}

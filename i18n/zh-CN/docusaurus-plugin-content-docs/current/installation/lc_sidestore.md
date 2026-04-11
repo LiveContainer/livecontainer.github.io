@@ -36,7 +36,7 @@ sidebar_position: 2
 9. 打开 iOS 设置 -> 通用 -> VPN 与设备管理，验证 LiveContainer。
 10. 前往下方 [安装后设置](#安装后设置) 完成后续配置。
 
-<p>
+<p class="img-scroll">
 <img width="300px" src="/img/lc_sidestore/1.jpg" />
 <img width="300px" src="/img/lc_sidestore/2.jpg" />
 <img width="300px" src="/img/lc_sidestore/3.jpg" />
@@ -69,8 +69,9 @@ sidebar_position: 2
 4. 退出 SideStore 并返回 LiveContainer。可通过 SideStore “Apps” 页的退出按钮，或系统多任务切换器返回。
 5. 在 LiveContainer 设置中点击 “Import Certificate from SideStore”，并确认。
 6. 若按钮从 “Import Certificate” 变成 “Remove Certificate”，表示导入成功。可前往 “JIT-Less Mode Diagnose” 页面进一步验证。
+7. （可选）[检查刷新是否成功](/faq/refresh-verification.md)
 
-<p>
+<p class="img-scroll">
 <img height="500px" src="/img/lc_sidestore/4.jpg" />
 <img height="500px" src="/img/lc_sidestore/5.jpg" />
 <img height="500px" src="/img/lc_sidestore/6.jpg" />
@@ -79,3 +80,19 @@ sidebar_position: 2
 
 ## 自动刷新快捷指令
 自动刷新快捷指令的用法与独立 SideStore 基本一致，只需将原来 SideStore 的 “Refresh All Apps” 动作替换为 LiveContainer 的对应动作。
+## 故障排除
+如果看到错误 "证书未找到，你是否登录了内置SideStore？"，但你确实已按照上述步骤操作，那可能是SideStore自己的问题。你可以尝试以下解决方法。
+
+1. 打开内置 SideStore，进入设置并向下滚动。
+2. 点击 "Export Signing Certificate..."。
+3. 为导出的证书设置密码并将其保存到设备。
+4. 退出内置 SideStore 并重新打开 LiveContainer。
+5. 进入设置，点击 "导入证书"，然后点击 "好"。
+6. 选择你刚刚导出的证书，并输入你选择的密码。
+7. 你可以检查 "免JIT模式诊断" 页面以验证所有配置是否正确。
+
+<p class="img-scroll">
+<img height="500px" src="/img/lc_sidestore/8.jpg" />
+<img height="500px" src="/img/lc_sidestore/10.jpg" />
+<img height="500px" src="/img/lc_sidestore/9.jpg" />
+</p>

@@ -33,7 +33,7 @@ If an app has multiple containers, hold the app and select the target container 
 6. Tap the gray "Launch URL" text in the first action and paste the launch URL you copied in step 2.
 7. Tap the "x" button to close the keyboard.
 8. Tap the play/run button to test the shortcut. If the app opens, the shortcut works.
-<p>
+<p class="img-scroll">
 <img height="500px" src="/img/add-to-home-screen/2.jpg" />
 <img height="500px" src="/img/add-to-home-screen/3.jpg" />
 <img height="500px" src="/img/add-to-home-screen/4.jpg" />
@@ -48,7 +48,7 @@ If an app has multiple containers, hold the app and select the target container 
 12. Tap "Image" → tap "Choose File" → select the image file you saved in step 1.
 13. Tap "Add" to add the icon to your home screen.
 14. To add more apps to your home screen, hold your shortcut, tap "Duplicate," and edit the Launch URL to another app’s URL.
-<p>
+<p class="img-scroll">
 <img height="500px" src="/img/add-to-home-screen/8.jpg" />
 <img height="500px" src="/img/add-to-home-screen/9.jpg" />
 <img height="500px" src="/img/add-to-home-screen/10.jpg" />

@@ -43,6 +43,7 @@ Generally no. They require extra app ids.
 - LiveContainer fails to install or verify: [Installation & Signing Errors](./faq/installing-livecontainer.md)
 - Guest app import/signing fails: [Installation & Signing Errors](./faq/installing-livecontainer.md)
 - JIT-less import or diagnose fields are wrong: [JIT-Less Setup & Diagnose](./faq/jit-less-mode-setup.md)
+- "Certificate not found, did you log into built-in SideStore?": [LiveContainer+SideStore troubleshooting](./installation/lc_sidestore.md#troubleshooting) 
 - App crashes after launch: [App Crashes](./faq/app-crashes.md)
 - Guest app not working correctly: [Using Guest Apps](./faq/using-guest-apps.md)
 - Per-app toggles to improve compatibility: [App Settings](./guides/app-settings.md)

@@ -39,7 +39,7 @@ title: 添加到主屏幕
 7. 点击 `x` 关闭键盘。
 8. 点击播放/运行按钮测试快捷指令。若应用成功打开，说明快捷指令配置正确。
 
-<p>
+<p class="img-scroll">
 <img height="500px" src="/img/add-to-home-screen/2.jpg" />
 <img height="500px" src="/img/add-to-home-screen/3.jpg" />
 <img height="500px" src="/img/add-to-home-screen/4.jpg" />
@@ -55,7 +55,7 @@ title: 添加到主屏幕
 12. 点击 `Image` -> `Choose File`，选择步骤 1 保存的图标文件。
 13. 点击 `Add`，将图标添加到主屏幕。
 14. 若要继续添加其他应用，可长按该快捷指令并点击 `Duplicate`，然后把 Launch URL 改成目标应用的新 URL。
-<p>
+<p class="img-scroll">
 <img height="500px" src="/img/add-to-home-screen/8.jpg" />
 <img height="500px" src="/img/add-to-home-screen/9.jpg" />
 <img height="500px" src="/img/add-to-home-screen/10.jpg" />

@@ -43,6 +43,7 @@ sidebar_position: 8
 - LiveContainer 安装或验证失败：[安装与签名错误](./faq/installing-livecontainer.md)
 - 访客App导入/签名失败：[安装与签名错误](./faq/installing-livecontainer.md)
 - JIT-Less 导入或诊断字段错误：[免JIT模式设置与诊断](./faq/jit-less-mode-setup.md)
+- "证书未找到，你是否登录了内置SideStore?"：[LiveContainer+SideStore 故障排除](./installation/lc_sidestore.md#troubleshooting)
 - App启动后崩溃：[App崩溃](./faq/app-crashes.md)
 - App工作不正常：[使用App](./faq/using-guest-apps.md)
 - 对每个App单独设置以改进兼容性：[App设置](./guides/app-settings.md)

@@ -34,7 +34,7 @@ Please download the LiveContainer + SideStore .ipa file first:
 9. Go to iOS Settings App -> General -> VPN & Device Management and verify LiveContainer
 10. Go to the [Setup after Installing](#setup-after-installing) section to complete LiveContainer and SideStore's setup.
 
-<p>
+<p class="img-scroll">
 <img width="300px" src="/img/lc_sidestore/1.jpg" />
 <img width="300px" src="/img/lc_sidestore/2.jpg" />
 <img width="300px" src="/img/lc_sidestore/3.jpg" />
@@ -67,8 +67,9 @@ Once LiveContainer+SideStore is installed, you need to import the certificate fr
 4. Quit SideStore and open LiveContainer. You can do this by either tapping the "quit" icon in SideStore's Apps page or using the app switcher.
 5. Go to LiveContainer's settings, tap "Import Certificate from SideStore", and tap "OK".
 6. If the "Import Certificate" button changes to "Remove Certificate", the certificate has been imported. You can check the "JIT-Less Mode Diagnose" page to verify that everything is configured correctly.
+7. (Optional) [Check if Refresh is Successful](/faq/refresh-verification.md)
 
-<p>
+<p class="img-scroll">
 <img height="500px" src="/img/lc_sidestore/4.jpg" />
 <img height="500px" src="/img/lc_sidestore/5.jpg" />
 <img height="500px" src="/img/lc_sidestore/6.jpg" />
@@ -77,3 +78,20 @@ Once LiveContainer+SideStore is installed, you need to import the certificate fr
 
 ## Auto-Refresh Shortcut
 You can use the auto-refresh shortcut just like you would with the standalone SideStore—simply replace SideStore's "Refresh All Apps" action with LiveContainer's.
+
+## Troubleshooting
+If you see the error "Certificate not found, did you log into built-in SideStore?" and you are confident that you did the above steps correctly, it's probably a SideStore side issue that we haven't figured out, but you can try the following workaround.
+
+1. Open built-in SideStore, go to Settings, and scroll down.
+2. Tap "Export Signing Certificate..."
+3. Choose a password for the exported certificate and save it on your device
+4. Exit built-in SideStore and reopen LiveContainer.
+5. Go to Settings, tap "Import Certificate", tap "OK"
+6. Select the certificate you just exported, and type the password you chose
+7. You can check the "JIT-Less Mode Diagnose" page to verify that everything is configured correctly.
+
+<p class="img-scroll">
+<img height="500px" src="/img/lc_sidestore/8.jpg" />
+<img height="500px" src="/img/lc_sidestore/10.jpg" />
+<img height="500px" src="/img/lc_sidestore/9.jpg" />
+</p>
