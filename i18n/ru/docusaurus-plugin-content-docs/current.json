@@ -1,0 +1,26 @@
+{
+  "version.label": {
+    "message": "Текущая версия",
+    "description": "The label for version current"
+  },
+  "sidebar.docsSidebar.category.Installation": {
+    "message": "Установка",
+    "description": "The label for category 'Installation' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Guides": {
+    "message": "Руководства",
+    "description": "The label for category 'Guides' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Development": {
+    "message": "Разработка",
+    "description": "The label for category 'Development' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.FAQ": {
+    "message": "Частые вопросы",
+    "description": "The label for category 'FAQ' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.doc.Introduction": {
+    "message": "Введение",
+    "description": "The label for the doc item 'Introduction' in sidebar 'docsSidebar', linking to the doc intro"
+  }
+}

@@ -21,8 +21,8 @@ if (typeof window === 'undefined') {
   });
 }
 
-/** @type {import('@docusaurus/types').Config} */
-const config = {
+/** @returns {import('@docusaurus/types').Config} */
+module.exports = () => ({
   title: 'LiveContainer',
   tagline: 'Run iOS apps in a sandbox without jailbreak',
   favicon: 'img/favicon.ico',
@@ -52,7 +52,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'it', 'zh-CN'],
+    locales: ['en', 'it', 'zh-CN', 'ru'],
     localeConfigs: {
       en: {
         label: 'English',
@@ -66,6 +66,10 @@ const config = {
         label: '简体中文',
         direction: 'ltr',
         path: 'zh-CN',
+      },
+      ru: {
+        label: 'Русский',
+        direction: 'ltr',
       },
     },
   },
@@ -94,8 +98,12 @@ const config = {
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {
-        // 支持的语言（中文搜索效果更好）
-        language: ['en', 'it','zh'],
+        // The Chinese tokenizer drops Cyrillic; use a separate pipeline for Russian.
+        // Keep the same stemmers across locales: the plugin caches their initialization.
+        language:
+          process.env.DOCUSAURUS_CURRENT_LOCALE === 'ru'
+            ? ['en', 'it', 'ru']
+            : ['en', 'it', 'zh', 'ru'],
         // 索引整个站点页面（不仅仅是 docs）
         indexPages: true,
         // 搜索框高亮
@@ -185,6 +193,4 @@ const config = {
         respectPrefersColorScheme: true,
       },
     }),
-};
-
-module.exports = config;
+});
